@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cameraView : MonoBehaviour
+public class CameraView : MonoBehaviour
 {
     private float xAxixClamp;
     private void Awake()
