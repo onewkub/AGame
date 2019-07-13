@@ -373,6 +373,8 @@ MonoBehaviour:
   rightWheelT: {fileID: 1662233656}
   motorForce: 300
   BrakePower: 50
+  VerticalLeft: Vertical
+  VerticalRight: Vertical2
   moveCooldown: 1.85
   movingTime: 0.925
 --- !u!54 &2028333743

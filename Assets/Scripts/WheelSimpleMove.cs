@@ -9,7 +9,8 @@ public class WheelSimpleMove : MonoBehaviour
     public float motorForce = 100f;
     public float BrakePower = 50f;
     private bool isBraking = false;
-
+    public string VerticalLeft;
+    public string VerticalRight;
     private float m_leftVertical, m_rightVertical;
     public float moveCooldown = 1.85f;
     public float movingTime = 0.925f;
@@ -19,12 +20,12 @@ public class WheelSimpleMove : MonoBehaviour
     public void GetInput()
     {
         
-        if (Input.GetAxis("VerticalLeft") > 0 || Input.GetAxis("VerticalRight") > 0)
+        if (Input.GetAxis(VerticalLeft) > 0 || Input.GetAxis(VerticalRight) > 0)
         {
             if (sinceLastMove <= 0)
             {
-                m_leftVertical = Input.GetAxis("VerticalLeft");
-                m_rightVertical = Input.GetAxis("VerticalRight");
+                m_leftVertical = Input.GetAxis(VerticalLeft);
+                m_rightVertical = Input.GetAxis(VerticalRight);
                 isBraking = false;
                 sinceLastMove = moveCooldown;
             }
