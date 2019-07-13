@@ -24,7 +24,7 @@ public class CameraFollower : MonoBehaviour
             ObjectToFollow.up * offset.y;
         transform.position = Vector3.Lerp(transform.position, _targetPos, followSpeed * Time.deltaTime);
     }
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         lookAtTarget();
         followTarget();

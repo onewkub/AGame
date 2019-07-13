@@ -11,23 +11,38 @@ public class WheelSimpleMove : MonoBehaviour
     private bool isBraking = false;
 
     private float m_leftVertical, m_rightVertical;
+    public float moveCooldown = 1.85f;
+    public float movingTime = 0.925f;
+    private float sinceLastMove = 0f;
 
 
     public void GetInput()
     {
-
-        if (Input.GetKey(KeyCode.Space))
+        
+        if (Input.GetAxis("VerticalLeft") > 0 || Input.GetAxis("VerticalRight") > 0)
         {
-            isBraking = true;
-            m_leftVertical = 0f;
-            m_rightVertical = 0f;
+            if (sinceLastMove <= 0)
+            {
+                m_leftVertical = Input.GetAxis("VerticalLeft");
+                m_rightVertical = Input.GetAxis("VerticalRight");
+                isBraking = false;
+                sinceLastMove = moveCooldown;
+            }
+            else if (sinceLastMove < moveCooldown - movingTime)
+            {
+                isBraking = true;
+                m_leftVertical = 0;
+                m_rightVertical = 0;
+            }
         }
         else
         {
-            m_leftVertical = Input.GetAxis("VerticalLeft");
-            m_rightVertical = Input.GetAxis("VerticalRight");
-            isBraking = false;
+            sinceLastMove = 0;
+            isBraking = true;
+            m_leftVertical = 0;
+            m_rightVertical = 0;
         }
+        sinceLastMove -= Time.deltaTime;
 
     }
     
@@ -42,7 +57,6 @@ public class WheelSimpleMove : MonoBehaviour
 
         if (isBraking)
         {
-
             leftWheel.brakeTorque = BrakePower;
             rightWheel.brakeTorque = BrakePower;
         }
@@ -55,9 +69,13 @@ public class WheelSimpleMove : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         GetInput();
+    }
+
+    private void FixedUpdate()
+    {
         WheelsMove();
         BrakeWheel(); 
 
