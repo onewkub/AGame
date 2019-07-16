@@ -26,6 +26,7 @@ public class WheelSimpleMove : MonoBehaviour
             {
                 m_leftVertical = Input.GetAxis(VerticalLeft);
                 m_rightVertical = Input.GetAxis(VerticalRight);
+                Debug.Log($"{m_leftVertical} {m_rightVertical}");
                 isBraking = false;
                 sinceLastMove = moveCooldown;
             }
@@ -36,6 +37,15 @@ public class WheelSimpleMove : MonoBehaviour
                 m_rightVertical = 0;
             }
         }
+        #if UNITY_EDITOR
+        //for debug (this move both wheel at once)
+        else if (Input.GetKey(KeyCode.Keypad8)){
+            m_leftVertical = 2;
+            m_rightVertical = 2;
+            isBraking = false;
+            sinceLastMove = moveCooldown;
+        }
+        #endif
         else
         {
             sinceLastMove = 0;
