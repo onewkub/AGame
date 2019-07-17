@@ -32,9 +32,9 @@ public class DecryptGameCode : MonoBehaviour
     {
         for (int i = 0; i < 7; i++)
         {
-            numbersSet1[i] = (short) Random.Range(1, 4);
+            numbersSet1[i] = (short) Random.Range(1, 5);
             NumbersText[i].text = numbersSet1[i].ToString();
-            numbersSet2[i] = (short) Random.Range(1, 4);
+            numbersSet2[i] = (short) Random.Range(1, 5);
         }
     }
 
