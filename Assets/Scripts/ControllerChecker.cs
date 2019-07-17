@@ -17,10 +17,10 @@ public class ControllerChecker : MonoBehaviour
 
     void Update()
     {
-        LB.text = "LeftBumper :" + Input.GetButton("LeftBumper");
-        RB.text = "RightBumper :" + Input.GetButton("RightBumper");
-        LT.text = "LeftTrigger :" + Input.GetAxis("LeftTrigger");
-        RT.text = "RightTrigger :" + Input.GetAxis("RightTrigger");
+        LB.text = "LeftBumper(2) :" + Input.GetButton("LeftBumper");
+        RB.text = "RightBumper(4) :" + Input.GetButton("RightBumper");
+        LT.text = "LeftTrigger(1) :" + Input.GetAxis("LeftTrigger");
+        RT.text = "RightTrigger(3) :" + Input.GetAxis("RightTrigger");
         VL.text = "VerticalLeft: " + Input.GetAxis("VerticalLeft");
         VR.text = "VerticalRight: " + Input.GetAxis("VerticalRight");
 
