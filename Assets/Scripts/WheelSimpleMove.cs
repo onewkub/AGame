@@ -20,7 +20,7 @@ public class WheelSimpleMove : MonoBehaviour
     public void GetInput()
     {
         
-        if (Input.GetAxis(VerticalLeft) > 0 || Input.GetAxis(VerticalRight) > 0)
+        if (Input.GetAxis(VerticalLeft) !=0 || Input.GetAxis(VerticalRight) !=0 )
         {
             if (sinceLastMove <= 0)
             {

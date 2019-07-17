@@ -212,6 +212,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &95254675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 2064033344}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 95254676}
+  m_Layer: 0
+  m_Name: WheelChair (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &95254676
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 2064033344}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95254675}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!146 &335768400 stripped
 WheelCollider:
   m_CorrespondingSourceObject: {fileID: 2797485872619321542, guid: cebaeeb3df5127443aca4a37165ede81,
@@ -475,7 +505,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &2028333740 stripped
 GameObject:
@@ -613,6 +643,16 @@ PrefabInstance:
       propertyPath: m_ForwardFriction.m_Stiffness
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5457471279851555303, guid: cebaeeb3df5127443aca4a37165ede81,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5457471279851555303, guid: cebaeeb3df5127443aca4a37165ede81,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3604342740246129856, guid: cebaeeb3df5127443aca4a37165ede81,
         type: 3}
       propertyPath: m_ForwardFriction.m_Stiffness
@@ -656,7 +696,7 @@ PrefabInstance:
     - target: {fileID: 5457471279543213271, guid: cebaeeb3df5127443aca4a37165ede81,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5457471279543213271, guid: cebaeeb3df5127443aca4a37165ede81,
         type: 3}
@@ -677,16 +717,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5457471279851555303, guid: cebaeeb3df5127443aca4a37165ede81,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -10.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5457471279851555303, guid: cebaeeb3df5127443aca4a37165ede81,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5457471279851555302, guid: cebaeeb3df5127443aca4a37165ede81,
         type: 3}
