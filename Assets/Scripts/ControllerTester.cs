@@ -22,7 +22,7 @@ public class ControllerTester : MonoBehaviour
         Axis0.text = $"Horizontal = {Input.GetAxis("Horizontal")}";
         Axis1.text = $"Horizontal2 = {Input.GetAxis("Horizontal2")}";
 
-        Axis2.text = $"Vertical = {Input.GetAxis("Vertical")}";
-        Axis3.text = $"Vertical2 = {Input.GetAxis("Vertical2")}";
+        Axis2.text = $"VerticalLeft = {Input.GetAxis("VerticalLeft")}";
+        Axis3.text = $"VerticalRight = {Input.GetAxis("VerticalRight")}";
     }
 }
