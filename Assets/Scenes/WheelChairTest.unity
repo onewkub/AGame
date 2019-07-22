@@ -495,6 +495,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &682934350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1637630812959444532, guid: 48206ae60e190974da0fa55bf6a1b044,
+    type: 3}
+  m_PrefabInstance: {fileID: 1637630812278640250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!146 &736222920 stripped
 WheelCollider:
   m_CorrespondingSourceObject: {fileID: 1637630812914159794, guid: 48206ae60e190974da0fa55bf6a1b044,
@@ -518,6 +524,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TriggerTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 984007075158045112, guid: b6252c0e13f761744834034736167c5f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6260776717456666416, guid: b6252c0e13f761744834034736167c5f,
         type: 3}
@@ -1044,6 +1055,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1637630812278640250}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1340137211 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1637630813383856257, guid: 48206ae60e190974da0fa55bf6a1b044,
+    type: 3}
+  m_PrefabInstance: {fileID: 1637630812278640250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1427163378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,13 +1338,15 @@ MonoBehaviour:
   rightWheel: {fileID: 800977153}
   leftWheelT: {fileID: 465755962}
   rightWheelT: {fileID: 1257047505}
-  motorForce: 100
+  motorForce: 300
   BrakePower: 50
   VerticalLeft: VerticalLeft
   VerticalRight: VerticalRight
   staminaBar: {fileID: 1427163380}
-  totalStamina: 2
-  currentStamina: 2
+  totalStamina: 5
+  currentStamina: 5
+  movingTime: 1
+  cooldownTime: 0.5
 --- !u!1001 &713898062360991556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1465,6 +1484,31 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1260988169292809250, guid: 48206ae60e190974da0fa55bf6a1b044,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637630813383856262, guid: 48206ae60e190974da0fa55bf6a1b044,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637630813383856262, guid: 48206ae60e190974da0fa55bf6a1b044,
+        type: 3}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 682934350}
+    - target: {fileID: 1637630813383856262, guid: 48206ae60e190974da0fa55bf6a1b044,
+        type: 3}
+      propertyPath: PlayerBody
+      value: 
+      objectReference: {fileID: 1340137211}
+    - target: {fileID: 1637630812959444533, guid: 48206ae60e190974da0fa55bf6a1b044,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637630812959444523, guid: 48206ae60e190974da0fa55bf6a1b044,
         type: 3}
       propertyPath: m_Enabled
       value: 0
