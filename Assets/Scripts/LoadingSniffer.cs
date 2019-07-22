@@ -5,27 +5,29 @@ using TMPro;
 
 public class LoadingSniffer : MonoBehaviour
 {
-    public Slider loadBar;
+    public CustomLoadBar loadBar;
     public TextMeshProUGUI loadText;
+    string dot = "";
 
     private void Start()
     {
-        StartCoroutine(dotter());
+        StartCoroutine(Dotter());
     }
     // Update is called once per frame
     void Update()
     {
-        loadText.text = SceneLoadManager.Instance.ActualIsDone() ? "Complete" : "Loading";
-        loadBar.value = SceneLoadManager.Instance.ProgressClamped();
+        loadText.text = (SceneLoadManager.Instance.ActualIsDone() ? "Complete" : "Loading") + dot;
+        loadBar.LoadPercentage = SceneLoadManager.Instance.ProgressClamped();
     }
 
-    IEnumerator dotter()
+    IEnumerator Dotter()
     {
-        string dot = ".";
-        dot = dot + ".";
-        loadText.text = loadText + dot;
-        if (dot == "...")
-            dot = ".";
-        yield return new WaitForSeconds(0.5f);
+        while (true)
+        {
+            dot += ".";
+            if (dot == "....")
+                dot = ".";
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 }
