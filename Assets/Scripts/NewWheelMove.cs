@@ -13,58 +13,41 @@ public class NewWheelMove : MonoBehaviour
     public string VerticalLeft;
     public string VerticalRight;
     private float m_leftVertical, m_rightVertical;
-    public Slider staminaBar;
-    public float totalStamina = 1;
-    public float currentStamina = 1;
-    private bool tiredStatus = false;
     private float sinceLastime = 0f;
     public float movingTime = 1f;
     public float cooldownTime = 0.5f;
 
     public void GetInput()
     {
-        if (tiredStatus && currentStamina >= totalStamina/2)
-        {
-            tiredStatus = false;
-        }
-        if(currentStamina <= 0)
-        {
-            m_leftVertical = 0;
-            m_rightVertical = 0;
-            tiredStatus = true;
-            currentStamina += Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.Joystick1Button5))
+
+        if (Input.GetKey(KeyCode.Joystick1Button5))
         {
             isBraking = true;
         }
-        else if (Mathf.Abs(Input.GetAxis(VerticalLeft)) == 1 && Mathf.Abs(Input.GetAxis(VerticalRight)) == 1 && !tiredStatus)
+        else if (Mathf.Abs(Input.GetAxis(VerticalLeft)) == 1 && Mathf.Abs(Input.GetAxis(VerticalRight)) == 1)
         {
             if(sinceLastime <= 0)
             {
                 m_leftVertical = Input.GetAxis(VerticalLeft);
                 m_rightVertical = Input.GetAxis(VerticalRight);
                 isBraking = false;
-                currentStamina -= 1;
                 sinceLastime = movingTime;
             }
             else if(sinceLastime <= movingTime - cooldownTime)
             {
                 m_leftVertical = 0;
                 m_rightVertical = 0;
-                //currentStamina += Time.deltaTime * 0.25f;
 
             }
 
         }
-        else if (Mathf.Abs(Input.GetAxis(VerticalLeft)) == 1f && !tiredStatus)
+        else if (Mathf.Abs(Input.GetAxis(VerticalLeft)) == 1f)
         {
             if (sinceLastime <= 0)
             {
                 m_leftVertical = Input.GetAxis(VerticalLeft);
                 m_rightVertical = 0f;
                 isBraking = false;
-                currentStamina -= 1;
                 sinceLastime = movingTime;
 
             }
@@ -72,19 +55,17 @@ public class NewWheelMove : MonoBehaviour
             {
                 m_leftVertical = 0;
                 m_rightVertical = 0;
-                //currentStamina += Time.deltaTime * 0.25f;
 
             }
 
         }
-        else if (Mathf.Abs(Input.GetAxis(VerticalRight)) == 1 && !tiredStatus)
+        else if (Mathf.Abs(Input.GetAxis(VerticalRight)) == 1)
         {
             if (sinceLastime <= 0)
             {
                 m_leftVertical = 0f;
                 m_rightVertical = Input.GetAxis(VerticalRight);
                 isBraking = false;
-                currentStamina -= 1;
                 sinceLastime = movingTime;
 
             }
@@ -92,7 +73,6 @@ public class NewWheelMove : MonoBehaviour
             {
                 m_leftVertical = 0;
                 m_rightVertical = 0;
-                //currentStamina += Time.deltaTime * 0.25f;
 
             }
         }
@@ -101,13 +81,6 @@ public class NewWheelMove : MonoBehaviour
             m_leftVertical = 0f;
             m_rightVertical = 0f;
             //isBraking = true;
-            if (currentStamina < totalStamina)
-            {
-                if (tiredStatus)
-                    currentStamina += Time.deltaTime * 0.75f;
-                else
-                    currentStamina += Time.deltaTime;
-            }
 
         }
         sinceLastime -= Time.deltaTime;
@@ -137,10 +110,6 @@ public class NewWheelMove : MonoBehaviour
 
     }
 
-    private void UpdateStaminaBar()
-    {
-        staminaBar.value = currentStamina / totalStamina;
-    }
 
     private void WheelsPoseUpdate()
     {
@@ -169,7 +138,6 @@ public class NewWheelMove : MonoBehaviour
         WheelsMove();
         WheelsPoseUpdate();
         BrakeWheel();
-        UpdateStaminaBar();
         Debug.Log(leftWheel.rpm + " " + rightWheel.rpm);
     }
 }
