@@ -98,7 +98,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 112000000, guid: 680a898bda2957b48bb7ea039128e6a7,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1488,6 +1488,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1637630812959444533, guid: 48206ae60e190974da0fa55bf6a1b044,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1637630813383856262, guid: 48206ae60e190974da0fa55bf6a1b044,
         type: 3}
       propertyPath: m_Enabled
@@ -1503,11 +1508,6 @@ PrefabInstance:
       propertyPath: PlayerBody
       value: 
       objectReference: {fileID: 1340137211}
-    - target: {fileID: 1637630812959444533, guid: 48206ae60e190974da0fa55bf6a1b044,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1637630812959444523, guid: 48206ae60e190974da0fa55bf6a1b044,
         type: 3}
       propertyPath: m_Enabled
