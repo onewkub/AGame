@@ -98,7 +98,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 112000000, guid: 680a898bda2957b48bb7ea039128e6a7,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -846,12 +846,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1637630812278640250}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1340137211 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1637630813383856257, guid: 48206ae60e190974da0fa55bf6a1b044,
-    type: 3}
-  m_PrefabInstance: {fileID: 1637630812278640250}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1976839761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,7 +1114,7 @@ PrefabInstance:
     - target: {fileID: 1637630813383856262, guid: 48206ae60e190974da0fa55bf6a1b044,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1637630813383856262, guid: 48206ae60e190974da0fa55bf6a1b044,
         type: 3}
@@ -1131,11 +1125,11 @@ PrefabInstance:
         type: 3}
       propertyPath: PlayerBody
       value: 
-      objectReference: {fileID: 1340137211}
+      objectReference: {fileID: 560107179255876183}
     - target: {fileID: 1637630812959444523, guid: 48206ae60e190974da0fa55bf6a1b044,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48206ae60e190974da0fa55bf6a1b044, type: 3}
