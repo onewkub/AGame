@@ -138,6 +138,6 @@ public class NewWheelMove : MonoBehaviour
         WheelsMove();
         WheelsPoseUpdate();
         BrakeWheel();
-        Debug.Log(leftWheel.rpm + " " + rightWheel.rpm);
+        //Debug.Log(leftWheel.rpm + " " + rightWheel.rpm);
     }
 }
