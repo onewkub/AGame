@@ -26,6 +26,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: eyebrow005
+    second: {fileID: 2100000, guid: c10d3740ef0ff024ba0f3e5abfdb4ad9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: middleage_asian_male
     second: {fileID: 2100000, guid: 664da10aadb29484d9063f7103f34d86, type: 2}
   - first:
@@ -33,6 +38,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: ponytail01
     second: {fileID: 2100000, guid: 373e5b10ca48ba349acd9dce7abacdfc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: teethMaterial
+    second: {fileID: 2100000, guid: e02ad6f88f7eed94d9999dba386ee49e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tongue01Material
+    second: {fileID: 2100000, guid: 6c970677cd9861c4f8a844730359cec3, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
