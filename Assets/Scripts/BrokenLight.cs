@@ -17,4 +17,8 @@ public class BrokenLight : MonoBehaviour
         float timeRand = Random.Range(0f, 1f);
         
     }
+    private void changeInsenLight(float val)
+    {
+        m_light.intensity = val;
+    }
 }
