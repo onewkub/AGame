@@ -25,7 +25,7 @@ public class SimpleMove : MonoBehaviour
         Vector3 moveForward = transform.forward * VertInput;
         Vector3 moveSide = transform.right * HorizInput;
 
-        Debug.Log(HorizInput + " " + VertInput);
+        //Debug.Log(HorizInput + " " + VertInput);
 
 
         if (isWalking)
