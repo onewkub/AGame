@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class BrokenLight : MonoBehaviour
 {
-    private float delay;
-    private bool lightStatus = true;
-    public Light m_light;
+    private Light m_light;
+    public float minVal, maxVal;
     private void Start()
     {
         m_light = GetComponent<Light>();
+        StartCoroutine(Flashing());
     }
 
-    private void Update()
+    IEnumerator Flashing()
     {
-        float timeRand = Random.Range(0f, 1f);
-        
+        while (true)
+        {
+            float delay = Random.Range(minVal, maxVal);
+            yield return new WaitForSeconds(delay);
+            m_light.enabled = !m_light.enabled;
+        }
     }
-    private void changeInsenLight(float val)
-    {
-        m_light.intensity = val;
-    }
+
 }
