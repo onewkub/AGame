@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadingMiniGameScene.unity
     guid: 33cefe493c49ca640802f9ab9b31c75d
   - enabled: 1
-    path: Assets/Scenes/WheelChairTest.unity
+    path: Assets/Scenes/Testor/WheelChairTest.unity
     guid: aeacf3581a263f841a6c69a48d285743
   - enabled: 1
     path: Assets/Scenes/ModelTest.unity
