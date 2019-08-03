@@ -12,18 +12,9 @@ public class ElevatorOpen : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.transform.name == "Testor")
+        if (other.gameObject.tag == "Player")
         {
             ElAnimator.SetBool("Open", true);
-            Debug.Log("Im in");
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.transform.name == "Testor")
-        {
-            ElAnimator.SetBool("Open", false);
-            Debug.Log("im out");
         }
     }
 }
