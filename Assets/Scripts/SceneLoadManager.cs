@@ -53,11 +53,11 @@ public class SceneLoadManager : MonoBehaviour
     IEnumerator LoadAsync(int index, bool allowActivation)
     {
         loading = SceneManager.LoadSceneAsync(index);
-        Debug.Log("Loading Scene " + index);
+        //Debug.Log("Loading Scene " + index);
         loading.allowSceneActivation = allowActivation;
         while (!ActualIsDone())
         {
-            Debug.Log("Load Progress: " + ProgressClamped());
+            //Debug.Log("Load Progress: " + ProgressClamped());
             yield return null;
         }
     }

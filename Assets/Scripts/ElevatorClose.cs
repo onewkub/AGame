@@ -15,7 +15,7 @@ public class ElevatorClose : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             ElAnimator.SetBool("Open", false);
-            SceneLoadManager.Instance.LoadElevator();
+            SceneLoadManager.Instance.SwitchSceneinLoading();
         }
     }
 }

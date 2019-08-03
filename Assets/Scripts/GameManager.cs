@@ -16,4 +16,8 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
     }
+    private void Update()
+    {
+        //Debug.Log(SceneLoadManager.Instance.ProgressClamped());
+    }
 }
