@@ -5,17 +5,20 @@ using UnityEngine;
 public class SceneEventFirstFloor : MonoBehaviour
 {
     public static SceneEventFirstFloor Instance { get; set; }
-    private bool PassTutorial;
     public GameObject OpenTrigger;
     public GameObject CloseTrigger;
     public GameObject InsideTrigger;
 
     private void Start()
     {
-        PassTutorial = false;
         OpenTrigger.SetActive(false);
         CloseTrigger.SetActive(false);
     }
 
-
+    private void OnTriggerEnter(Collider other)
+    {
+        OpenTrigger.SetActive(true);
+        CloseTrigger.SetActive(true);
+        InsideTrigger.SetActive(false);
+    }
 }

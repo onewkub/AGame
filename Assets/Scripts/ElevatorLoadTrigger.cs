@@ -5,6 +5,6 @@ public class ElevatorLoadTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SceneLoadManager.Instance.ElevatorLoadAsync(1);
+        SceneLoadManager.Instance.ElevatorLoadAsync(2);
     }
 }

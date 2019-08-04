@@ -8,10 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/FirstFloor_start.unity
+    guid: ae487bd152435d54e985181276a2f560
+  - enabled: 1
     path: Assets/Scenes/ElevatorScene.unity
     guid: b29d7e09c65576c469600401058c4076
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/FirstFloor.unity
     guid: 5f97346665378c747b9d5d2b8cd5b724
   - enabled: 0
