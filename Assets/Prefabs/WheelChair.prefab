@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 807076234390169870}
   - component: {fileID: 807076234390169865}
   - component: {fileID: 807076234390169864}
-  - component: {fileID: 807076234390169867}
   - component: {fileID: 807076234390169866}
   m_Layer: 0
   m_Name: WheelChair
@@ -69,28 +68,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.72, y: 2.62, z: 1.69}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &807076234390169867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 807076234390169861}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2079c4218eee64644b4faa7cf720d36f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftWheel: {fileID: 934119841817492890}
-  rightWheel: {fileID: 934119841754829395}
-  leftWheelT: {fileID: 934119842620898408}
-  rightWheelT: {fileID: 934119843410486915}
-  motorForce: 150
-  BrakePower: 50
-  VerticalLeft: VerticalLeft
-  VerticalRight: VerticalRight
-  moveCooldown: 5
-  movingTime: 2
 --- !u!114 &807076234390169866
 MonoBehaviour:
   m_ObjectHideFlags: 0

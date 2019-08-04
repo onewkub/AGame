@@ -9,7 +9,7 @@ public class NewWheelMove : MonoBehaviour
     public Transform leftWheelT, rightWheelT;
     public float motorForce = 100f;
     public float BrakePower = 50f;
-    private bool isBraking = false;
+    private bool isBraking = true;
     public string VerticalLeft;
     public string VerticalRight;
     private float m_leftVertical, m_rightVertical;
@@ -109,7 +109,10 @@ public class NewWheelMove : MonoBehaviour
 
 
     }
-
+    public void Brake()
+    {
+        isBraking = true;
+    }
 
     private void WheelsPoseUpdate()
     {

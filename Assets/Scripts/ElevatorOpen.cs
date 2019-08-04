@@ -28,6 +28,8 @@ public class ElevatorOpen : MonoBehaviour
             {
                 SoundFX.Stop();
             }
+            ElAnimator.SetBool("Open", false);
+            SoundFX.Play();
         }
     }
 }
