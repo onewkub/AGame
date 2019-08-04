@@ -271,6 +271,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloodyFloor
       objectReference: {fileID: 0}
+    - target: {fileID: 2700638080297594356, guid: b9ec6857b2277d84498655b5b9a9c8e8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8953524301830577628, guid: b9ec6857b2277d84498655b5b9a9c8e8,
         type: 3}
       propertyPath: m_LocalPosition.x
