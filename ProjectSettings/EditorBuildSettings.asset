@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ElevatorScene.unity
     guid: b29d7e09c65576c469600401058c4076
   - enabled: 1
