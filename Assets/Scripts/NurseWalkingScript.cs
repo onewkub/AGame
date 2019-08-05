@@ -9,8 +9,9 @@ public class NurseWalkingScript : MonoBehaviour
     public Transform FirstPos;
     public Transform StartPos;
     public Transform FinalPos;
-    public GameObject WheelChair;
     public Transform StandPos;
+    public GameObject WheelChair;
+
     private NursePull nuresPull;
     private NewWheelMove newWheelMove;
 
@@ -35,7 +36,7 @@ public class NurseWalkingScript : MonoBehaviour
     }
     IEnumerator WaitUntillTarget()
     {
-        Debug.Log("Im here");
+        //Debug.Log("Im here");
         yield return new WaitWhile(() => DistanceToTarget(FirstPos));
         navMeshAgent.SetDestination(StartPos.position);
         yield return new WaitWhile(() => DistanceToTarget(StartPos));
@@ -49,7 +50,7 @@ public class NurseWalkingScript : MonoBehaviour
 
     }
     private bool DistanceToTarget(Transform destination) {
-        Debug.Log(Vector3.Distance(transform.position, destination.position));
+        //Debug.Log(Vector3.Distance(transform.position, destination.position));
         if(Vector3.Distance(transform.position, destination.position) <= 0.5f)
         {
             return false;

@@ -20,7 +20,7 @@ public class ElevatorOpen : MonoBehaviour
             SoundFX.Play();
         }
     }
-    private void OnTriggerExit(Collider other)
+    /*private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
@@ -31,5 +31,5 @@ public class ElevatorOpen : MonoBehaviour
             ElAnimator.SetBool("Open", false);
             SoundFX.Play();
         }
-    }
+    }*/
 }
