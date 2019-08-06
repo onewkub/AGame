@@ -13,13 +13,13 @@ public class NurseWalkingScript : MonoBehaviour
     public GameObject WheelChair;
 
     private NursePull nuresPull;
-    private NewWheelMove newWheelMove;
+    private WheelChairSimpleMove newWheelMove;
 
     private void Awake()
     {
        StartCoroutine(WaitElevatorOpen());
         nuresPull = WheelChair.GetComponent<NursePull>();
-        newWheelMove = WheelChair.GetComponent<NewWheelMove>();
+        newWheelMove = WheelChair.GetComponent<WheelChairSimpleMove>();
     }
 
     private void SwitchCoroutine()
@@ -42,9 +42,9 @@ public class NurseWalkingScript : MonoBehaviour
         yield return new WaitWhile(() => DistanceToTarget(StartPos));
         nuresPull.enabled = false;
         newWheelMove.enabled = true;
-        newWheelMove.Brake();
         navMeshAgent.SetDestination(FinalPos.position);
         yield return new WaitWhile(() => DistanceToTarget(FinalPos));
+        newWheelMove.OpenWheelCollider();
         navMeshAgent.SetDestination(StandPos.position);
 
 

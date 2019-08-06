@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NursePull : MonoBehaviour
 {
-    private NewWheelMove Controlable;
+    private WheelChairSimpleMove Controlable;
     public Transform ObjectToFollow;
     public Vector3 offset;
     public float followSpeed = 10f;
@@ -12,7 +12,7 @@ public class NursePull : MonoBehaviour
 
     private void Start()
     {
-        Controlable = GetComponent<NewWheelMove>();
+        Controlable = GetComponent<WheelChairSimpleMove>();
         Controlable.enabled = false;
     }
     public void followTarget()

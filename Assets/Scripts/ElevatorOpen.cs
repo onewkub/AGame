@@ -20,16 +20,15 @@ public class ElevatorOpen : MonoBehaviour
             SoundFX.Play();
         }
     }
-    /*private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            if (SoundFX.isPlaying)
+            if(this.tag == "FirstFloor")
             {
-                SoundFX.Stop();
+                ElAnimator.SetBool("Open", false);
+                SoundFX.Play();
             }
-            ElAnimator.SetBool("Open", false);
-            SoundFX.Play();
         }
-    }*/
+    }
 }
