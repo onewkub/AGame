@@ -8,12 +8,19 @@ public class WheelChairSimpleMove : MonoBehaviour
     public Transform LeftWheelTransform, RightWheelTransform, FrontLeftWheelTransform, FrontRightWheelTransform;
     public float ForceWheel = 10f;
     public float BrakeFroce = 5f;
+    public float maxSpeed = 1f;
+
 
     private float m_horizontal;
     private float m_vertical;
-    private float maxSteerAngle = 40f;
     private float m_steerAngle;
     private bool isBrake = false;
+    private Rigidbody rigidbody;
+
+    private void Start()
+    {
+        rigidbody = GetComponent<Rigidbody>();
+    }
 
     private void GetInput()
     {
@@ -21,78 +28,27 @@ public class WheelChairSimpleMove : MonoBehaviour
         m_vertical = Input.GetAxis("VerticalLeft");
         isBrake = Input.GetButton("RightBumper");
     }
-    private void Steer()
-    {
-        m_steerAngle = maxSteerAngle * m_horizontal;
-        FrontLeftWheel.steerAngle = m_steerAngle;
-        FrontRightWheel.steerAngle = m_steerAngle;
-    }
-
-    private void UpdateWheelPoses()
-    {
-        UpdateWheelPose(FrontLeftWheel, FrontLeftWheelTransform);
-        UpdateWheelPose(FrontRightWheel, FrontRightWheelTransform);
-        UpdateWheelPose(LeftWheel, LeftWheelTransform);
-        UpdateWheelPose(RightWheel, RightWheelTransform);
-    }
-
-    private void UpdateWheelPose(WheelCollider _collider, Transform _transform)
-    {
-        Vector3 _pos = _transform.position;
-        Quaternion _quat = _transform.rotation;
-
-        _collider.GetWorldPose(out _pos, out _quat);
-        _transform.position = _pos;
-        _transform.rotation = _quat;
-    }
-    
     private void Accelerate()
     {
-        if (!isBrake)
+        if (m_vertical == 0)
         {
-            if(m_vertical != 0)
-            {
-                //Debug.Log("GO Forward");
-                LeftWheel.motorTorque = m_vertical * ForceWheel;
-                RightWheel.motorTorque = m_vertical * ForceWheel;
-
-            }
-            else if(m_vertical == 0 && m_horizontal != 0)
-            {
-                if(m_horizontal < 0)
-                {
-                    //Debug.Log("turnLeft");
-                    LeftWheel.motorTorque = -ForceWheel * 0.7f;
-                    RightWheel.motorTorque = ForceWheel * 0.7f;
-                }
-                else if(m_horizontal > 0)
-                {
-                    //Debug.Log("turnRight");
-                    LeftWheel.motorTorque = ForceWheel * 0.7f;
-                    RightWheel.motorTorque = -ForceWheel * 0.7f;
-                }
-            }
-            else
-            {
-                RightWheel.motorTorque = 0f;
-                LeftWheel.motorTorque = 0f;
-            }
-
+            LeftWheel.motorTorque = m_horizontal * ForceWheel ;
+            RightWheel.motorTorque = m_horizontal * ForceWheel * -1 ;
         }
         else
         {
+            LeftWheel.motorTorque = m_vertical * (Mathf.Abs(m_vertical) * ForceWheel + m_horizontal * ForceWheel);
+            RightWheel.motorTorque = m_vertical * (Mathf.Abs(m_vertical) * ForceWheel - m_horizontal * ForceWheel);
 
-            RightWheel.motorTorque = 0f;
-            LeftWheel.motorTorque = 0f;
         }
     }
-
     private void Brake()
     {
         if (isBrake)
         {
             LeftWheel.brakeTorque = BrakeFroce;
             RightWheel.brakeTorque = BrakeFroce;
+
         }
         else
         {
@@ -100,20 +56,52 @@ public class WheelChairSimpleMove : MonoBehaviour
             RightWheel.brakeTorque = 0f;
         }
     }
+    private void UpdateWheelPoses()
+        {
+            UpdateWheelPose(FrontLeftWheel, FrontLeftWheelTransform);
+            UpdateWheelPose(FrontRightWheel, FrontRightWheelTransform);
+            UpdateWheelPose(LeftWheel, LeftWheelTransform);
+            UpdateWheelPose(RightWheel, RightWheelTransform);
+        }
+
+    private void UpdateWheelPose(WheelCollider _collider, Transform _transform)
+        {
+            Vector3 _pos = _transform.position;
+            Quaternion _quat = _transform.rotation;
+
+            _collider.GetWorldPose(out _pos, out _quat);
+            _transform.position = _pos;
+            _transform.rotation = _quat;
+        }
+
+    private bool Limitor()
+    {
+        if(rigidbody.velocity.magnitude > maxSpeed)
+        {
+            return false;
+        }
+        return true;
+    }
+
     public void OpenWheelCollider()
     {
         LeftWheel.enabled = true;
         RightWheel.enabled = true;
-        FrontLeftWheel.enabled = true;
         FrontRightWheel.enabled = true;
+        FrontLeftWheel.enabled = true;
     }
     private void Update()
     {
-        Debug.Log(m_horizontal + " " + m_vertical);
+        //Debug.Log(rigidbody.velocity.magnitude);
         GetInput();
-        Steer();
         Brake();
-        Accelerate();
+        if(Limitor())
+            Accelerate();
+        else
+        {
+            LeftWheel.motorTorque = 0f;
+            RightWheel.motorTorque = 0f;
+        }
         UpdateWheelPoses();
     }
 }

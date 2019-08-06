@@ -14,7 +14,7 @@ public class ElevatorClose : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && SceneEventFirstFloor.Instance.pass)
         {
             ElAnimator.SetBool("Open", false);
             StartCoroutine(WaitSoundFXEnd());
@@ -23,6 +23,7 @@ public class ElevatorClose : MonoBehaviour
     }
     IEnumerator WaitSoundFXEnd()
     {
+        
         SoundFX.Play();
         yield return new WaitWhile(() => SoundFX.isPlaying);
         SceneLoadManager.Instance.SwitchSceneinLoading();

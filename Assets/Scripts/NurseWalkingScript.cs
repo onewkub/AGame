@@ -32,6 +32,7 @@ public class NurseWalkingScript : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         navMeshAgent.SetDestination(FirstPos.position);
+        //transform.Translate(FirstPos.position, Space.World);
         SwitchCoroutine();
     }
     IEnumerator WaitUntillTarget()
