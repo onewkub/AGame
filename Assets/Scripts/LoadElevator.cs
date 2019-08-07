@@ -6,6 +6,6 @@ public class LoadElevator : MonoBehaviour
 {
     void Start()
     {
-        SceneLoadManager.Instance.ElevatorLoadAsync(1);
+        SceneLoadManager.Instance.ElevatorLoadAsync("ElevatorScene");
     }
 }

@@ -9,6 +9,7 @@ public class WheelChairMovement : MonoBehaviour
     public Transform wheelLeft, wheelRight, sWheelLeft, sWheelRight;
     private float m_vertical;
     private float m_horizontal;
+    
     private CharacterController controller;
 
 

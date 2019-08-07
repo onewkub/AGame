@@ -2,18 +2,18 @@
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
+    public static GameManager Player { get; private set; }
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (Player != null && Player != this)
         {
             Destroy(gameObject);
         }
         else
         {
             DontDestroyOnLoad(gameObject);
-            Instance = this;
+            Player = this;
         }
     }
     private void Update()

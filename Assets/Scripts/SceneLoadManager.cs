@@ -21,12 +21,12 @@ public class SceneLoadManager : MonoBehaviour
 
     public void LoadElevator()
     {
-        StartCoroutine(LoadAsync(0, true));
+        StartCoroutine(LoadAsync("Elevator", true));
     }
 
-    public void ElevatorLoadAsync(int index)
+    public void ElevatorLoadAsync(string sceneName)
     {
-        StartCoroutine(LoadAsync(index, false));
+        StartCoroutine(LoadAsync(sceneName, false));
     }
 
     public void SwitchSceneinLoading()
@@ -50,9 +50,9 @@ public class SceneLoadManager : MonoBehaviour
         }
     }
 
-    IEnumerator LoadAsync(int index, bool allowActivation)
+    IEnumerator LoadAsync(string sceneName, bool allowActivation)
     {
-        loading = SceneManager.LoadSceneAsync(index);
+        loading = SceneManager.LoadSceneAsync(sceneName);
         //Debug.Log("Loading Scene " + index);
         loading.allowSceneActivation = allowActivation;
         while (!ActualIsDone())
