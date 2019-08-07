@@ -15,12 +15,7 @@ public class WheelChairSimpleMove : MonoBehaviour
     private float m_vertical;
     private float m_steerAngle;
     private bool isBrake = false;
-    private Rigidbody rigidbody;
 
-    private void Start()
-    {
-        rigidbody = GetComponent<Rigidbody>();
-    }
 
     private void GetInput()
     {
@@ -74,15 +69,6 @@ public class WheelChairSimpleMove : MonoBehaviour
             _transform.rotation = _quat;
         }
 
-    private bool Limitor()
-    {
-        if(rigidbody.velocity.magnitude > maxSpeed)
-        {
-            return false;
-        }
-        return true;
-    }
-
     public void OpenWheelCollider()
     {
         LeftWheel.enabled = true;
@@ -95,13 +81,7 @@ public class WheelChairSimpleMove : MonoBehaviour
         //Debug.Log(rigidbody.velocity.magnitude);
         GetInput();
         Brake();
-        if(Limitor())
-            Accelerate();
-        else
-        {
-            LeftWheel.motorTorque = 0f;
-            RightWheel.motorTorque = 0f;
-        }
+        Accelerate();
         UpdateWheelPoses();
     }
 }

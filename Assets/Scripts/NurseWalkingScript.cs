@@ -13,30 +13,21 @@ public class NurseWalkingScript : MonoBehaviour
     public GameObject WheelChair;
 
     private NursePull nuresPull;
-    private WheelChairSimpleMove newWheelMove;
+    private WheelChairMovement newWheelMove;
 
     private void Awake()
     {
-       StartCoroutine(WaitElevatorOpen());
+       StartCoroutine(SetPosition());
         nuresPull = WheelChair.GetComponent<NursePull>();
-        newWheelMove = WheelChair.GetComponent<WheelChairSimpleMove>();
+        newWheelMove = WheelChair.GetComponent<WheelChairMovement>();
     }
 
-    private void SwitchCoroutine()
-    {
-        StartCoroutine(WaitUntillTarget());
 
-    }
-
-    IEnumerator WaitElevatorOpen()
+    IEnumerator SetPosition()
     {
         yield return new WaitForSeconds(3);
         navMeshAgent.SetDestination(FirstPos.position);
         //transform.Translate(FirstPos.position, Space.World);
-        SwitchCoroutine();
-    }
-    IEnumerator WaitUntillTarget()
-    {
         //Debug.Log("Im here");
         yield return new WaitWhile(() => DistanceToTarget(FirstPos));
         navMeshAgent.SetDestination(StartPos.position);
@@ -45,11 +36,9 @@ public class NurseWalkingScript : MonoBehaviour
         newWheelMove.enabled = true;
         navMeshAgent.SetDestination(FinalPos.position);
         yield return new WaitWhile(() => DistanceToTarget(FinalPos));
-        newWheelMove.OpenWheelCollider();
         navMeshAgent.SetDestination(StandPos.position);
-
-
     }
+
     private bool DistanceToTarget(Transform destination) {
         //Debug.Log(Vector3.Distance(transform.position, destination.position));
         if(Vector3.Distance(transform.position, destination.position) <= 0.5f)

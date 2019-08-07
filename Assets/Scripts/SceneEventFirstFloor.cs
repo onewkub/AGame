@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class SceneEventFirstFloor : MonoBehaviour
 {
-    public static SceneEventFirstFloor Instance { get; set; }
-    public bool pass = false;
     public GameObject OpenTrigger;
     public GameObject CloseTrigger;
     public GameObject InsideTrigger;
@@ -18,7 +16,6 @@ public class SceneEventFirstFloor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        pass = true;
         OpenTrigger.SetActive(true);
         CloseTrigger.SetActive(true);
         InsideTrigger.SetActive(false);

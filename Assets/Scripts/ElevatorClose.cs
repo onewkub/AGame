@@ -14,7 +14,7 @@ public class ElevatorClose : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && SceneEventFirstFloor.Instance.pass)
+        if (other.gameObject.tag == "Player")
         {
             ElAnimator.SetBool("Open", false);
             StartCoroutine(WaitSoundFXEnd());
