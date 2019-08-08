@@ -4,23 +4,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayerScript : MonoBehaviour
 {
-    private Scene scene;
+    public CharacterController controller;
+
 
     private void OnLevelWasLoaded()
     {
-        scene = SceneManager.GetActiveScene();
+        controller.enabled = false;
         if (GameManager.gameManager.PlayerPos != null)
         {
             //Debug.Log("Set Pos in " + scene.name + " AT " + GameManager.gameManager.PlayerPos);
             Debug.Log("Set Position");
-            Invoke("SetPos", 2);
-
+            
+            transform.position = GameManager.gameManager.PlayerPos;
+            transform.rotation = GameManager.gameManager.PlayerRot;
         }
-    }
-    private void SetPos()
-    {
-        transform.position = GameManager.gameManager.PlayerPos;
-        transform.rotation = GameManager.gameManager.PlayerRot;
+        controller.enabled = true;
     }
 
 }
