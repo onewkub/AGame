@@ -6,17 +6,20 @@ public class ElevatorClose : MonoBehaviour
 {
     public GameObject ElDoor;
     public GameObject Nurse;
+    public GameObject Player;
     public bool NurseNotArrive = true;
+
     private Animator ElAnimator;
     private AudioSource SoundFX;
     private Transform lastPosOfPlayer;
-    private NurseWalkingScript nurseWalkingScript;
+    private NurseWalkingF1Script nurseWalkingScript;
+
 
     private void Awake()
     {
         ElAnimator = ElDoor.GetComponent<Animator>();
         SoundFX = ElDoor.GetComponent<AudioSource>();
-        nurseWalkingScript = Nurse.GetComponent<NurseWalkingScript>();
+        nurseWalkingScript = Nurse.GetComponent<NurseWalkingF1Script>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -33,6 +36,11 @@ public class ElevatorClose : MonoBehaviour
         ElAnimator.SetBool("Open", false);
         SoundFX.Play();
         yield return new WaitWhile(() => SoundFX.isPlaying);
+        GameManager.gameManager.PlayerPos = Player.transform.position;
+        GameManager.gameManager.PlayerRot = Player.transform.rotation;
+
+        Debug.Log("Saving Position: " + GameManager.gameManager.PlayerPos);
+
         SceneLoadManager.Instance.SwitchSceneinLoading();
 
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NurseWalkingScript : MonoBehaviour
+public class NurseWalkingF1Script : MonoBehaviour
 {
 
     public NavMeshAgent navMeshAgent;

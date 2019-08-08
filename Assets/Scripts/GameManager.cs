@@ -2,22 +2,19 @@
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Player { get; private set; }
-
+    public static GameManager gameManager { get; private set; }
+    public Vector3 PlayerPos;
+    public Quaternion PlayerRot;
     private void Awake()
     {
-        if (Player != null && Player != this)
+        if (gameManager != null && gameManager != this)
         {
             Destroy(gameObject);
         }
         else
         {
             DontDestroyOnLoad(gameObject);
-            Player = this;
+            gameManager = this;
         }
-    }
-    private void Update()
-    {
-        //Debug.Log(SceneLoadManager.Instance.ProgressClamped());
     }
 }
