@@ -9,7 +9,10 @@ public class point_map : MonoBehaviour
 	public point_check point_stop2;
 	public point_check point_stop3;
 	public point_check point_ghost_head1;
+	public point_check point_ghost_in_room;
+	public point_check point_hide;
 	public movement_ghost move;
+	public move_ghost nursemove;
 	public GameObject nurse;
     void Start()
     {
@@ -19,9 +22,18 @@ public class point_map : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(point_stop.state == true)
+		if (point_ghost_in_room.ghost_state == false)
+		{
+			if (point_hide.state)
+			{
+				nursemove.playerhide = true;
+			}
+		}
+		if (point_stop.state == true)
 		{
 			move.gopoint = true;
+			nursemove.idle = false;
+			nursemove.playerhide = false;
 		}
 		if (point_stop2.state == true)
 		{
