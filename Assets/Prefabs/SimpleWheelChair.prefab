@@ -915,6 +915,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 3977576486231437463}
+  head: {fileID: 5590935921237347709}
+  cam: {fileID: 4863146117939971724}
 --- !u!143 &3977576486231437463
 CharacterController:
   m_ObjectHideFlags: 0

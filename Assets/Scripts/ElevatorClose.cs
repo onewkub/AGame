@@ -7,6 +7,8 @@ public class ElevatorClose : MonoBehaviour
     public GameObject ElDoor;
     public GameObject Nurse;
     public GameObject Player;
+    public GameObject Head;
+    public GameObject Cam;
     public bool NurseNotArrive = true;
 
     private Animator ElAnimator;
@@ -38,8 +40,11 @@ public class ElevatorClose : MonoBehaviour
         yield return new WaitWhile(() => SoundFX.isPlaying);
         GameManager.gameManager.PlayerPos = Player.transform.position;
         GameManager.gameManager.PlayerRot = Player.transform.rotation;
-
-        Debug.Log("Saving Position: " + GameManager.gameManager.PlayerPos);
+        GameManager.gameManager.headRot = Head.transform.rotation;
+        GameManager.gameManager.camRot = Cam.transform.rotation;
+        GameManager.gameManager.NursePos = Nurse.transform.position;
+        GameManager.gameManager.NurseRot = Nurse.transform.rotation;
+        //Debug.Log("Saving Position: " + GameManager.gameManager.PlayerPos);
 
         SceneLoadManager.Instance.SwitchSceneinLoading();
 

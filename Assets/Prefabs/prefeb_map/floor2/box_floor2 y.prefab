@@ -271,6 +271,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NormalCeiling
       objectReference: {fileID: 0}
+    - target: {fileID: 2402283118513956892, guid: d280bb06632fabd4892ff5ffc09907e5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 648884125635876488, guid: d280bb06632fabd4892ff5ffc09907e5,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -32,8 +32,6 @@ public class NurseWalkingF1Script : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         navMeshAgent.SetDestination(FirstPos.position);
-        //transform.Translate(FirstPos.position, Space.World);
-        //Debug.Log("Im here");
         yield return new WaitWhile(() => DistanceToTarget(FirstPos));
         navMeshAgent.SetDestination(StartPos.position);
         yield return new WaitWhile(() => DistanceToTarget(StartPos));
@@ -51,7 +49,6 @@ public class NurseWalkingF1Script : MonoBehaviour
     
 
     private bool DistanceToTarget(Transform destination) {
-        //Debug.Log(Vector3.Distance(transform.position, destination.position));
         if(Vector3.Distance(transform.position, destination.position) <= 0.5f)
         {
             return false;

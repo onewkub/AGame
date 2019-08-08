@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class PlayerScript : MonoBehaviour
 {
     public CharacterController controller;
+    public GameObject head;
+    public GameObject cam;
 
 
     private void OnLevelWasLoaded()
@@ -17,6 +19,8 @@ public class PlayerScript : MonoBehaviour
             
             transform.position = GameManager.gameManager.PlayerPos;
             transform.rotation = GameManager.gameManager.PlayerRot;
+            head.transform.rotation = GameManager.gameManager.headRot;
+            cam.transform.rotation = GameManager.gameManager.camRot;
         }
         controller.enabled = true;
     }
