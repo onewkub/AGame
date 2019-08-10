@@ -23,7 +23,7 @@ public class point_check : MonoBehaviour
 		{
 			state = true;
 		}
-		if (other.tag == "GHost")
+		if (other.tag == "Ghost")
 		{
 			ghost_state = true;
 		}
@@ -34,7 +34,7 @@ public class point_check : MonoBehaviour
 		{
 			state = false;
 		}
-		if (other.tag == "GHost")
+		if (other.tag == "Ghost")
 		{
 			ghost_state = false;
 		}

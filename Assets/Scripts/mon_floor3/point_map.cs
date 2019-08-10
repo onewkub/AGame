@@ -14,6 +14,9 @@ public class point_map : MonoBehaviour
 	public movement_ghost move;
 	public move_ghost nursemove;
 	public GameObject nurse;
+	float timer = 0;
+
+
     void Start()
     {
         
@@ -22,12 +25,11 @@ public class point_map : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (point_ghost_in_room.ghost_state == false)
+		if (point_ghost_in_room.ghost_state == false )
 		{
-			if (point_hide.state)
-			{
-				nursemove.playerhide = true;
-			}
+			nursemove.playerhide = point_hide.state;
+
+
 		}
 		if (point_stop.state == true)
 		{
