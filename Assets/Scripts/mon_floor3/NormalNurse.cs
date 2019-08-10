@@ -11,4 +11,5 @@ public class NormalNurse : MonoBehaviour
         transform.position = GameManager.gameManager.NursePos;
         transform.rotation = GameManager.gameManager.NurseRot;
     }
+
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NurseWalkingF2ScriptFirst : MonoBehaviour
+public class NurseWalkingF2Script : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
     public Transform LastPos;
@@ -15,7 +15,7 @@ public class NurseWalkingF2ScriptFirst : MonoBehaviour
     IEnumerator SetPosition()
     {
         yield return new WaitForSeconds(3);
-        //navMeshAgent.SetDestination(LastPos.position);
+        navMeshAgent.SetDestination(LastPos.position);
     }
 }
 
