@@ -17,6 +17,13 @@ public class movement_ghost : MonoBehaviour
 	public GameObject p2;
 	public GameObject p3;
 	public GameObject p4;
+	WheelChairMovement moveplayer;
+	public float time_hold = 3;
+	float timer_hold = 0;
+	public float time_stun = 3;
+	float timer_stun = 0;
+	bool hold;
+	bool stun;
 	float dist;
 	
 	// Start is called before the first frame update
@@ -24,6 +31,7 @@ public class movement_ghost : MonoBehaviour
     {
 		agent = GetComponent<NavMeshAgent>();
 		anim = GetComponent<Animator>();
+		moveplayer = player.GetComponent<WheelChairMovement>();
 		
 	}
 
@@ -39,19 +47,49 @@ public class movement_ghost : MonoBehaviour
 			go(p3, p4);
 		}
 		if (play) {
+			
+			
 			anim.SetBool("walk", false);
-			agent.stoppingDistance = range / 2;
-			agent.speed = run;
-			agent.SetDestination(player.transform.position);
-			dist = Vector3.Distance(player.transform.position, transform.position);
-			if (dist > range)
+			anim.SetBool("fastrun", true);
+			if(hold)
 			{
-				anim.SetBool("fastrun", true);
+				timer_hold -= Time.deltaTime;
+				anim.SetBool("holdplayer",true);
+				moveplayer.enabled = false;
+				if (timer_hold<0)
+				{
+					anim.SetBool("holdplayer", false);
+					hold = false;
+					stun = true;
+				}
+				timer_stun = time_stun ;
+
+			}
+			if (stun)
+			{
+				agent.SetDestination(transform.position);
+				timer_stun -= Time.deltaTime;
+				if (timer_stun < 0)
+				{
+					
+					stun = false;
+				}
 			}
 			else
 			{
-				anim.SetBool("fastrun", false);
+				agent.SetDestination(player.transform.position);
 			}
+			agent.stoppingDistance = range;
+			agent.speed = run;
+			
+			dist = Vector3.Distance(player.transform.position, transform.position);
+			if (dist < range &&  !hold && ! stun)
+			{
+				gameObject.transform.LookAt(player.transform.position);
+				timer_hold = time_hold;
+				hold = true;
+			}
+			
 		}
 		
 	}
