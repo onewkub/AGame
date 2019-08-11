@@ -18,7 +18,7 @@ public class interactItem : MonoBehaviour
     private void Update()
     {
         lookAtObject();
-        if(Input.GetKey(KeyCode.E) && PlayerOnArea)
+        if(Input.GetButton("InteractItem") && PlayerOnArea)
         {
             Destroy(gameObject);
         }
@@ -51,8 +51,8 @@ public class interactItem : MonoBehaviour
     }
     private void OnDestroy()
     {
-        Debug.Log("Weeh");
-        Debug.Log(gameObject.tag);
+        //Debug.Log("Weeh");
+        //Debug.Log(gameObject.tag);
         if(gameObject.tag == "Key")
         {
             Debug.Log("Get Key");
@@ -61,9 +61,14 @@ public class interactItem : MonoBehaviour
         else if(gameObject.tag == "Flashlight")
         {
             Debug.Log("Get Flashlight");
+            SceneEventFirstBloodyFloor.Instance.closeAllLight();
             Inventory.inventory.FlashLight = true;
         }
-        openTrigger.SetActive(true);
-        closeTrigger.SetActive(true);
+        if(openTrigger != null && closeTrigger != null)
+        {
+            openTrigger.SetActive(true);
+            closeTrigger.SetActive(true);
+
+        }
     }
 }
