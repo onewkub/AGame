@@ -6,6 +6,8 @@ TagManager:
   tags:
   - FirstFloor
   - Ghost
+  - Key
+  - Flashlight
   layers:
   - Default
   - TransparentFX

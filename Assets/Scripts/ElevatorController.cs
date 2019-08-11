@@ -27,25 +27,19 @@ public class ElevatorController : MonoBehaviour
     public void openElevator()
     {
         //yield return new WaitWhile(() => soundFX.isPlaying);
+        Debug.Log("Open Elevator");
+        ElevatorAnimator.SetBool("Open", true);
+        soundFX.Play();
 
-        if (!soundFX.isPlaying)
-        {
-            Debug.Log("Open Elevator");
-            ElevatorAnimator.SetBool("Open", true);
-            soundFX.Play();
-        }
     }
     
     public void closeElevator()
     {
         //yield return new WaitWhile(() => soundFX.isPlaying);
 
-        if (!soundFX.isPlaying)
-        {
-            Debug.Log("Close Elevator");
-            ElevatorAnimator.SetBool("Open", false);
-            soundFX.Play();
-        }
+        Debug.Log("Close Elevator");
+        ElevatorAnimator.SetBool("Open", false);
+        soundFX.Play();
     }
 
     public bool SoundFXisPlaying()

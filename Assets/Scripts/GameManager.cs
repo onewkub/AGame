@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
     public Quaternion headRot;
     public Quaternion camRot;
 
-    public bool Arrived2fllor { get; set; }
+    public bool Arrived2fllor;
+    public bool Arrive1FloorBloody;
 
 
     private void Awake()
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             gameManager = this;
         }
+        Arrive1FloorBloody = false;
         Arrived2fllor = false;
     }
 

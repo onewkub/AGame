@@ -507,7 +507,6 @@ GameObject:
   - component: {fileID: 8599370757708125877}
   - component: {fileID: 6746246330530821985}
   - component: {fileID: 5416623975262489729}
-  - component: {fileID: 3531376284281714747}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -580,22 +579,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4863146117939971724}
   m_Enabled: 1
---- !u!114 &3531376284281714747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4863146117939971724}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 283191c4e6960c649b5d7545dc906cf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectToFollow: {fileID: 4358861624205100674}
-  offset: {x: 0, y: 2, z: -6.25}
-  followSpeed: 10
-  lookSpeed: 10
 --- !u!1 &5252919409160192631
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,6 +884,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraView: {fileID: 8599370757708125877}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
   maxRange: 10
 --- !u!114 &3102049974542849332
 MonoBehaviour:

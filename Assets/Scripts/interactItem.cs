@@ -6,6 +6,8 @@ public class interactItem : MonoBehaviour
 {
     public GameObject canvas;
     public Transform objectToLook;
+    public GameObject openTrigger;
+    public GameObject closeTrigger;
 
     private bool PlayerOnArea = false;
     private void Start()
@@ -47,9 +49,21 @@ public class interactItem : MonoBehaviour
             PlayerOnArea = false;
         }
     }
-
     private void OnDestroy()
     {
-        Debug.Log("Weeh!!!!");   
+        Debug.Log("Weeh");
+        Debug.Log(gameObject.tag);
+        if(gameObject.tag == "Key")
+        {
+            Debug.Log("Get Key");
+            Inventory.inventory.Key = true;
+        }
+        else if(gameObject.tag == "Flashlight")
+        {
+            Debug.Log("Get Flashlight");
+            Inventory.inventory.FlashLight = true;
+        }
+        openTrigger.SetActive(true);
+        closeTrigger.SetActive(true);
     }
 }
