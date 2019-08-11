@@ -48,11 +48,17 @@ public class NurseWalkingF1Script : MonoBehaviour
     }
     
 
-    private bool DistanceToTarget(Transform destination) {
+    public bool DistanceToTarget(Transform destination) {
         if(Vector3.Distance(transform.position, destination.position) <= 0.5f)
         {
             return false;
         }
         return true;
     }
+
+    public bool nurseWheelChairState()
+    {
+        return nuresPull.enabled;
+    }
+
 }

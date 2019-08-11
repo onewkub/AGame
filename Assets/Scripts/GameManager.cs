@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
     public Quaternion PlayerRot;
     public Quaternion headRot;
     public Quaternion camRot;
+
+    public bool Arrived2fllor { get; set; }
+
+
     private void Awake()
     {
         if (gameManager != null && gameManager != this)
@@ -20,5 +24,13 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             gameManager = this;
         }
+        Arrived2fllor = false;
     }
+
+    private void OnLevelWasLoaded(int level)
+    {
+
+
+    }
+
 }

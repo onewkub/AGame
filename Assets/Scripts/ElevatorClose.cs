@@ -4,23 +4,19 @@ using UnityEngine;
 
 public class ElevatorClose : MonoBehaviour
 {
-    public GameObject ElDoor;
     public GameObject Nurse;
     public GameObject Player;
     public GameObject Head;
     public GameObject Cam;
     public bool NurseNotArrive = true;
 
-    private Animator ElAnimator;
-    private AudioSource SoundFX;
     private Transform lastPosOfPlayer;
     private NurseWalkingF1Script nurseWalkingScript;
 
 
+
     private void Awake()
     {
-        ElAnimator = ElDoor.GetComponent<Animator>();
-        SoundFX = ElDoor.GetComponent<AudioSource>();
         nurseWalkingScript = Nurse.GetComponent<NurseWalkingF1Script>();
     }
     private void OnTriggerEnter(Collider other)
@@ -34,10 +30,8 @@ public class ElevatorClose : MonoBehaviour
     {
         nurseWalkingScript.PlayerNotArrive = false;
         yield return new WaitWhile(() => NurseNotArrive);
-
-        ElAnimator.SetBool("Open", false);
-        SoundFX.Play();
-        yield return new WaitWhile(() => SoundFX.isPlaying);
+        ElevatorController.Instance.closeElevator();
+        yield return new WaitWhile(() => ElevatorController.Instance.SoundFXisPlaying());
         GameManager.gameManager.PlayerPos = Player.transform.position;
         GameManager.gameManager.PlayerRot = Player.transform.rotation;
         GameManager.gameManager.headRot = Head.transform.rotation;

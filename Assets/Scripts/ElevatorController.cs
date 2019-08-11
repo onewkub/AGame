@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ElevatorController : MonoBehaviour
 {
+
+    public static ElevatorController Instance { get; set; }
+
     private Animator ElevatorAnimator;
     private AudioSource soundFX;
 
@@ -11,6 +14,14 @@ public class ElevatorController : MonoBehaviour
     {
         ElevatorAnimator = GetComponent<Animator>();
         soundFX = GetComponent<AudioSource>();
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
     
     public void openElevator()
@@ -35,5 +46,10 @@ public class ElevatorController : MonoBehaviour
             ElevatorAnimator.SetBool("Open", false);
             soundFX.Play();
         }
+    }
+
+    public bool SoundFXisPlaying()
+    {
+        return soundFX.isPlaying;
     }
 }
