@@ -15,7 +15,7 @@ public class ElevatorOpen2FFloor : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other);
+        //Debug.Log(other);
         if(other.tag == "Ghost") {
 
             elevatorController.openElevator();
@@ -24,5 +24,13 @@ public class ElevatorOpen2FFloor : MonoBehaviour
         {
             elevatorController.closeElevator();
         }   
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            SceneLoadManager.Instance.SwitchSceneinLoading();
+            GameManager.gameManager.Arrived2fllor = true;
+        }
     }
 }

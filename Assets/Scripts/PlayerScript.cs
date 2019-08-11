@@ -9,10 +9,10 @@ public class PlayerScript : MonoBehaviour
     public GameObject cam;
 
 
-    private void OnLevelWasLoaded()
+    private void OnLevelWasLoaded(int level)
     {
         controller.enabled = false;
-        if (GameManager.gameManager.PlayerPos != null)
+        if (GameManager.gameManager.PlayerPos != null && level != 1)
         {
             //Debug.Log("Set Pos in " + scene.name + " AT " + GameManager.gameManager.PlayerPos);
             Debug.Log("Set Position");

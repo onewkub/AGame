@@ -40,8 +40,12 @@ public class NormalNurse : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
-        transform.position = GameManager.gameManager.NursePos;
-        transform.rotation = GameManager.gameManager.NurseRot;
+        if(level != 1)
+        {
+            transform.position = GameManager.gameManager.NursePos;
+            transform.rotation = GameManager.gameManager.NurseRot;
+
+        }
     }
 
 

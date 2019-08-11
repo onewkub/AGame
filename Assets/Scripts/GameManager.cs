@@ -27,10 +27,4 @@ public class GameManager : MonoBehaviour
         Arrived2fllor = false;
     }
 
-    private void OnLevelWasLoaded(int level)
-    {
-
-
-    }
-
 }
