@@ -15,24 +15,42 @@ public class point_map : MonoBehaviour
 	public move_ghost nursemove;
 	public GameObject nurse;
 	float timer = 0;
-
-
-    void Start()
+	public bool  playerstop=false;
+	public WheelChairMovement playermove;
+	float timerstop=0;
+	public float timestop = 0;
+	void Start()
     {
-        
-    }
+		;
+	}
 
     // Update is called once per frame
     void Update()
     {
+		timerstop -= Time.deltaTime;
+		if (timerstop <= 0)
+		{
+			playermove.enabled = true;
+		}
 		if (point_ghost_in_room.ghost_state == false )
 		{
-			nursemove.playerhide = point_hide.state;
-
+			if (point_hide.state){
+				nursemove.playerhide = true;
+			}
+			if (nursemove.backlift)
+			{
+				nursemove.playerhide = true;
+			}
 
 		}
 		if (point_stop.state == true)
 		{
+			if (playerstop == false)
+			{
+				timerstop = timestop;
+				playermove.enabled = false;
+				playerstop = true;
+			}
 			move.gopoint = true;
 			nursemove.idle = false;
 			nursemove.playerhide = false;
