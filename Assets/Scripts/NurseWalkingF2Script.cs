@@ -16,6 +16,7 @@ public class NurseWalkingF2Script : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         navMeshAgent.SetDestination(LastPos.position);
+        
     }
 }
 

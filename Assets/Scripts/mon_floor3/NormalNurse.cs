@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.AI;
-using UnityEngine.SceneManagement;
+
 public class NormalNurse : MonoBehaviour
 {
 
@@ -47,6 +47,5 @@ public class NormalNurse : MonoBehaviour
 
         }
     }
-
 
 }

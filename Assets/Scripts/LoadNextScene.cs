@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class LoadNextScene : MonoBehaviour
 {
-    private void Start()
+    private void OnLevelWasLoaded(int level)
     {
         SceneLoadManager.Instance.ElevatorLoadAsync("SecondFloor");
+
     }
 }

@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SecondFloor.unity
     guid: f49e740bc09003c46b7736b0db84aaaa
   - enabled: 1
+    path: Assets/Scenes/SecondFloor_2.unity
+    guid: 6d78acb5de29610419ed60a44b5bbf2b
+  - enabled: 1
     path: Assets/Scenes/ThirdFloor.unity
     guid: 0e579be0ea9478747a7441d0ea34068b
   - enabled: 1
