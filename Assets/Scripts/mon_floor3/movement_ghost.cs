@@ -25,10 +25,13 @@ public class movement_ghost : MonoBehaviour
 	bool hold;
 	bool stun;
 	float dist;
-	
+	public move_ghost nursemove;
+	public GameObject nurse;
+	AudioSource audio;
 	// Start is called before the first frame update
 	void Start()
     {
+		audio = gameObject.GetComponent<AudioSource>();
 		agent = GetComponent<NavMeshAgent>();
 		anim = GetComponent<Animator>();
 		moveplayer = player.GetComponent<WheelChairMovement>();
@@ -47,18 +50,22 @@ public class movement_ghost : MonoBehaviour
 			go(p3, p4);
 		}
 		if (play) {
-			
-			
+
+			audio.enabled = true;
 			anim.SetBool("walk", false);
 			anim.SetBool("fastrun", true);
 			if(hold)
 			{
+				audio.enabled = false;
+				nurse.SetActive(true);
+				nursemove.backlift = false;
+				nursemove.playerhide = false;
 				timer_hold -= Time.deltaTime;
 				anim.SetBool("holdplayer",true);
 				moveplayer.enabled = false;
 				if (timer_hold<0)
 				{
-					anim.SetBool("holdplayer", false);
+					
 					hold = false;
 					stun = true;
 				}
@@ -67,12 +74,14 @@ public class movement_ghost : MonoBehaviour
 			}
 			if (stun)
 			{
+				audio.enabled = false;
 				agent.SetDestination(transform.position);
 				timer_stun -= Time.deltaTime;
 				if (timer_stun < 0)
 				{
-					
+					anim.SetBool("holdplayer", false);
 					stun = false;
+					audio.enabled = true;
 				}
 			}
 			else
