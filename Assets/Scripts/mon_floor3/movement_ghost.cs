@@ -27,6 +27,9 @@ public class movement_ghost : MonoBehaviour
 	public move_ghost nursemove;
 	public GameObject nurse;
 	AudioSource audio;
+	public AudioSource hit_head;
+	
+	bool idle = false;
 	// Start is called before the first frame update
 	void Start()
     {
@@ -41,23 +44,32 @@ public class movement_ghost : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		
+		if (idle)
+		{
+			hit_head.enabled = true;
+		}
+		else
+		{
+			hit_head.enabled = false;
+		}
 		if (gopoint) {
 			go(p1, p2);
 		}
 		if (gopoint2)
 		{
+
 			go(p3, p4);
+
 		}
 		if (play) {
-
+			idle = false;
 			audio.enabled = true;
 			anim.SetBool("walk", false);
 			anim.SetBool("fastrun", true);
 			if(hold)
 			{
 				audio.enabled = false;
-				nurse.SetActive(true);
+				
 				nursemove.backlift = false;
 				nursemove.playerhide = false;
 				timer_hold -= Time.deltaTime;
@@ -86,6 +98,7 @@ public class movement_ghost : MonoBehaviour
 			}
 			else
 			{
+				idle = false;
 				agent.SetDestination(player.transform.position);
 			}
 			agent.stoppingDistance = range;
@@ -104,7 +117,7 @@ public class movement_ghost : MonoBehaviour
 	}
 	void go(GameObject p1,GameObject p2)
 	{
-		
+			idle = false;
 			anim.SetBool("walk", true);
 			dist = Vector3.Distance(p1.transform.position, transform.position);
 			if (dist > 10)
@@ -115,9 +128,11 @@ public class movement_ghost : MonoBehaviour
 			{
 				dist = Vector3.Distance(p2.transform.position, transform.position);
 				agent.SetDestination(p2.transform.position);
-				if (dist < 2)
+				if (dist <= 3 )
 				{
 					anim.SetBool("walk", false);
+					gopoint2 = false;
+					idle = true;
 				}
 			}
 		

@@ -17,15 +17,21 @@ public class point_map : MonoBehaviour
 	public WheelChairMovement playermove;
 	float timerstop=0;
 	public float timestop = 0;
+	public AudioSource ting;
+	public AudioSource lift;
+	float timers =1.5f;
+
+
 	void Start()
     {
-		
-	
+		ElevatorController.Instance.openElevator();
+
 	}
 
     // Update is called once per frame
     void Update()
     {
+		
 		timerstop -= Time.deltaTime;
 		if (timerstop <= 0)
 		{
@@ -40,6 +46,7 @@ public class point_map : MonoBehaviour
 			}
 
 		}
+		
 		
 		if (point_stop.state == true)
 		{
@@ -57,13 +64,29 @@ public class point_map : MonoBehaviour
 		{
 			move.gopoint = false;
 			move.gopoint2 = true;
-			nurse.SetActive(true);
+			nursecome();
 		}
 		if (point_stop3.state == true)
 		{
 			move.gopoint2 = false;
 			move.play = true;
+			nursecome();
+
 		}
+	}
+	void nursecome()
+	{
+		timers -= Time.deltaTime;
+		nurse.SetActive(true);
+		ting.enabled = true;
+		if (timers <= 0)
+		{
+			
+			lift.enabled = true;
+		}
+		
+
 	}
 
 }
+
