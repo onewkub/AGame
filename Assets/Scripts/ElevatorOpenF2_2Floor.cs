@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ElevatorOpenF2_2Floor : MonoBehaviour
 {
@@ -14,7 +12,7 @@ public class ElevatorOpenF2_2Floor : MonoBehaviour
         
     }
 
-    private void OnLevelWasLoaded(int level)
+    private void Start()
     {
         GameManager.gameManager.Arrived2fllor = true;
     }

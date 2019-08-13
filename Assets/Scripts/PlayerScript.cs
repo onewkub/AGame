@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayerScript : MonoBehaviour
 {
@@ -9,10 +7,10 @@ public class PlayerScript : MonoBehaviour
     public GameObject cam;
 
 
-    private void OnLevelWasLoaded(int level)
+    private void Start()
     {
         controller.enabled = false;
-        if (GameManager.gameManager.PlayerPos != null && level != 1)
+        if (GameManager.gameManager.PlayerPos != null && SceneManager.GetActiveScene().buildIndex != 1)
         {
             //Debug.Log("Set Pos in " + scene.name + " AT " + GameManager.gameManager.PlayerPos);
             Debug.Log("Set Position");
