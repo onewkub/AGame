@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.AI;
 
@@ -17,7 +15,12 @@ public class NormalNurse : MonoBehaviour
     private void Start()
     {
         scene = SceneManager.GetActiveScene();
-        walkingSound = Sound.GetComponent<AudioSource>();
+        if (scene.buildIndex != 1)
+        {
+            transform.position = GameManager.gameManager.NursePos;
+            transform.rotation = GameManager.gameManager.NurseRot;
+
+        }
     }
 
     private void Update()
@@ -44,17 +47,5 @@ public class NormalNurse : MonoBehaviour
         }
 
     }
-
-
-    private void OnLevelWasLoaded(int level)
-    {
-        if(level != 1)
-        {
-            transform.position = GameManager.gameManager.NursePos;
-            transform.rotation = GameManager.gameManager.NurseRot;
-
-        }
-    }
-
 
 }

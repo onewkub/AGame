@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LoadNextScene : MonoBehaviour
 {
-    private void OnLevelWasLoaded(int level)
+    private void Start()
     {
         SceneLoadManager.Instance.ElevatorLoadAsync("SecondFloor");
 

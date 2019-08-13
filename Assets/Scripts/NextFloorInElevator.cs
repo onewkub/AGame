@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class NextFloorInElevator : MonoBehaviour
 {
-    private void OnLevelWasLoaded(int level)
+    private void Start()
     {
         if (GameManager.gameManager.Arrive1FloorBloody && !GameManager.gameManager.Arrived2fllor)
         {
