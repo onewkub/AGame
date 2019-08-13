@@ -20,6 +20,7 @@ public class move_ghost : MonoBehaviour
 	public GameObject point_frontlift;
 	public GameObject point_find;
 	AudioSource audio;
+	public WheelChairMovement move;
 	// Start is called before the first frame update
 	void Start()
     {
@@ -87,10 +88,12 @@ public class move_ghost : MonoBehaviour
 					anim.SetBool("isRunning", false);
 					anim.SetBool("findplayer", true);
 					timerfindplayer -= Time.deltaTime;
+					move.enabled = false;
 					
 				}
 				if (timerfindplayer < 0)
 				{
+					move.enabled = true;
 					backlift = true;
 					audio.enabled = true;
 					anim.SetBool("isRunning", true);
