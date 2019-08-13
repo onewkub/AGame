@@ -14,7 +14,13 @@ public class MainMenuController : MonoBehaviour
         Debug.Log("LoadPrepareScene");
         PrepareScene.SetActive(true);
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Joystick1Button2))
+        {
+            LoadPrepareScene();
+        }
+    }
     public void LoadSetting()
     {
         Debug.Log("Setting");
