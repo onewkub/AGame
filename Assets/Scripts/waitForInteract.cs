@@ -2,10 +2,21 @@
 
 public class waitForInteract : MonoBehaviour
 {
+    public CustomLoadBar loadingbar;
+    public GameObject loadedText;
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (Input.anyKey)
+        if (!SceneLoadManager.Instance.ActualIsDone())
+        {
+            loadingbar.LoadPercentage = SceneLoadManager.Instance.ProgressClamped();
+        }
+        else
+        {
+            loadingbar.gameObject.SetActive(false);
+            loadedText.SetActive(true);
+        }
+        if (Input.anyKey && SceneLoadManager.Instance.ActualIsDone())
         {
             SceneLoadManager.Instance.SwitchSceneinLoading();
         }
@@ -13,6 +24,6 @@ public class waitForInteract : MonoBehaviour
 
     private void OnEnable()
     {
-        SceneLoadManager.Instance.ElevatorLoadAsync("FirstFloor_start");
+        SceneLoadManager.Instance.LoaderAsync("FirstFloor_start");
     }
 }

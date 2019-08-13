@@ -24,7 +24,7 @@ public class SceneLoadManager : MonoBehaviour
         StartCoroutine(LoadAsync("Elevator", true));
     }
 
-    public void ElevatorLoadAsync(string sceneName)
+    public void LoaderAsync(string sceneName)
     {
         StartCoroutine(LoadAsync(sceneName, false));
     }
@@ -53,13 +53,14 @@ public class SceneLoadManager : MonoBehaviour
     IEnumerator LoadAsync(string sceneName, bool allowActivation)
     {
         loading = SceneManager.LoadSceneAsync(sceneName);
-        //Debug.Log("Loading Scene " + index);
+        Debug.Log("Loading Scene " + sceneName);
         loading.allowSceneActivation = allowActivation;
         while (!ActualIsDone())
         {
-            //Debug.Log("Load Progress: " + ProgressClamped());
+            Debug.Log("Load Progress: " + ProgressClamped());
             yield return null;
         }
+        Debug.Log("Loading Complete");
     }
 
     public float ProgressClamped()
@@ -69,6 +70,6 @@ public class SceneLoadManager : MonoBehaviour
 
     public bool ActualIsDone()
     {
-        return Mathf.Clamp01(loading.progress / .9f) == 1f;
+        return ProgressClamped() == 1f;
     }
 }

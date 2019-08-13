@@ -4,7 +4,7 @@ public class LoadNextScenF2 : MonoBehaviour
 {
     private void Start()
     {
-        SceneLoadManager.Instance.ElevatorLoadAsync("ElevatorScene");
+        SceneLoadManager.Instance.LoaderAsync("ElevatorScene");
 
     }
 }

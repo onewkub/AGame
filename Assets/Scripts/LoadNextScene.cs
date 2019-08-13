@@ -4,7 +4,7 @@ public class LoadNextScene : MonoBehaviour
 {
     private void Start()
     {
-        SceneLoadManager.Instance.ElevatorLoadAsync("SecondFloor");
+        SceneLoadManager.Instance.LoaderAsync("SecondFloor");
 
     }
 }

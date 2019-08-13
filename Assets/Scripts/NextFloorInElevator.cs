@@ -6,15 +6,15 @@ public class NextFloorInElevator : MonoBehaviour
     {
         if (GameManager.gameManager.Arrive1FloorBloody && !GameManager.gameManager.Arrived2fllor)
         {
-            SceneLoadManager.Instance.ElevatorLoadAsync("SecondFloor_2");
+            SceneLoadManager.Instance.LoaderAsync("SecondFloor_2");
         }
         else if (!GameManager.gameManager.Arrive1FloorBloody)
         {
-            SceneLoadManager.Instance.ElevatorLoadAsync("FirstFloor");
+            SceneLoadManager.Instance.LoaderAsync("FirstFloor");
         }
         else
         {
-            SceneLoadManager.Instance.ElevatorLoadAsync("ThirdFloor");
+            SceneLoadManager.Instance.LoaderAsync("ThirdFloor");
         }
     }
 }
