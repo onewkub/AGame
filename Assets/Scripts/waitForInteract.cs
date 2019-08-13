@@ -24,6 +24,6 @@ public class waitForInteract : MonoBehaviour
 
     private void OnEnable()
     {
-        SceneLoadManager.Instance.LoaderAsync("FirstFloor_start");
+        SceneLoadManager.Instance.LoaderAsync("FirstFloor_start", 0);
     }
 }

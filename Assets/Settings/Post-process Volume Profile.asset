@@ -35,7 +35,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 1.2
+    value: 1.5
   threshold:
     overrideState: 1
     value: 0.3
@@ -46,8 +46,8 @@ MonoBehaviour:
     overrideState: 0
     value: 65472
   diffusion:
-    overrideState: 0
-    value: 7
+    overrideState: 1
+    value: 8
   anamorphicRatio:
     overrideState: 0
     value: 0
@@ -120,13 +120,13 @@ MonoBehaviour:
     value: -10
   tint:
     overrideState: 1
-    value: -6
+    value: -15
   colorFilter:
     overrideState: 0
     value: {r: 1, g: 1, b: 1, a: 1}
   hueShift:
     overrideState: 0
-    value: 0
+    value: -3
   saturation:
     overrideState: 1
     value: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
     value: 0
   postExposure:
     overrideState: 1
-    value: 1
+    value: 1.2
   contrast:
     overrideState: 0
     value: 0
@@ -812,7 +812,7 @@ MonoBehaviour:
       - 0.984375
       - 0.9921875
   hueVsHueCurve:
-    overrideState: 0
+    overrideState: 1
     value:
       curve:
         serializedVersion: 2
@@ -1402,15 +1402,15 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.53
+    value: 0.5
   smoothness:
-    overrideState: 1
+    overrideState: 0
     value: 0.4
   roundness:
-    overrideState: 1
+    overrideState: 0
     value: 0
   rounded:
-    overrideState: 1
+    overrideState: 0
     value: 0
   mask:
     overrideState: 0
@@ -1440,7 +1440,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.1
+    value: 0.15
   size:
     overrideState: 1
     value: 1

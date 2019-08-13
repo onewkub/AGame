@@ -6,6 +6,7 @@ public class SceneLoadManager : MonoBehaviour
 {
     public static SceneLoadManager Instance { get; private set; }
     private AsyncOperation loading;
+    private string sceneName;
 
     private void Awake()
     {
@@ -24,9 +25,18 @@ public class SceneLoadManager : MonoBehaviour
         StartCoroutine(LoadAsync("Elevator", true));
     }
 
-    public void LoaderAsync(string sceneName)
+    public void LoaderAsync(string sceneName, float delay)
     {
-        StartCoroutine(LoadAsync(sceneName, false));
+        if (this.sceneName != sceneName)
+        {
+            this.sceneName = sceneName;
+            Invoke("Load", delay);
+        }
+    }
+
+    private void Load()
+    {
+        StartCoroutine(LoadAsync(false));
     }
 
     public void SwitchSceneinLoading()
@@ -51,6 +61,19 @@ public class SceneLoadManager : MonoBehaviour
     }
 
     IEnumerator LoadAsync(string sceneName, bool allowActivation)
+    {
+        loading = SceneManager.LoadSceneAsync(sceneName);
+        Debug.Log("Loading Scene " + sceneName);
+        loading.allowSceneActivation = allowActivation;
+        while (!ActualIsDone())
+        {
+            Debug.Log("Load Progress: " + ProgressClamped());
+            yield return null;
+        }
+        Debug.Log("Loading Complete");
+    }
+
+    IEnumerator LoadAsync(bool allowActivation)
     {
         loading = SceneManager.LoadSceneAsync(sceneName);
         Debug.Log("Loading Scene " + sceneName);
