@@ -28,4 +28,8 @@ public class GameManager : MonoBehaviour
         Arrive1FloorBloody = false;
         Arrived2fllor = false;
     }
+    public void DestroyIT()
+    {
+        Destroy(gameObject);
+    }
 }

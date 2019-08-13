@@ -9459,6 +9459,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1780483027}
   - component: {fileID: 1780483028}
+  - component: {fileID: 1780483029}
   m_Layer: 0
   m_Name: loadNextScene
   m_TagString: Untagged
@@ -9474,7 +9475,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780483026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.32, y: 2.12, z: -23.49}
+  m_LocalPosition: {x: 45.32, y: 2.12, z: -19.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9492,6 +9493,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27e7d352e17813499147d8a41b1c73a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1780483029
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780483026}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15, y: 10.979443, z: 16.506985}
+  m_Center: {x: 0, y: 4.9897213, z: 0.7534921}
 --- !u!1001 &1789549739
 PrefabInstance:
   m_ObjectHideFlags: 0

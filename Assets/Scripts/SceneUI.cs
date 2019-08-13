@@ -42,4 +42,8 @@ public class SceneUI : MonoBehaviour
             KeyCom.color = new Color(255f, 255f, 255f, 1f);
         }
     }
+    public void DestroyIT()
+    {
+        Destroy(gameObject);
+    }
 }

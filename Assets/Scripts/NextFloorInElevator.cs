@@ -2,7 +2,7 @@
 
 public class NextFloorInElevator : MonoBehaviour
 {
-    private void Start()
+    private void OnTriggerEnter(Collider other)
     {
         if (GameManager.gameManager.Arrive1FloorBloody && !GameManager.gameManager.Arrived2fllor)
         {
@@ -16,5 +16,7 @@ public class NextFloorInElevator : MonoBehaviour
         {
             SceneLoadManager.Instance.LoaderAsync("ThirdFloor");
         }
+        Destroy(gameObject);
+
     }
 }

@@ -1,22 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class end_game : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject Survive;
+    public GameObject NotSurvie;
+    public GameObject EndGameUI;
+    public GameObject GhostHead;
+    public GameObject Nurse;
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if(other.tag == "Player")
+        {
+            Destroy(GhostHead);
+            Destroy(Nurse);
+            EndGameUI.SetActive(true);
+            Survive.SetActive(Inventory.inventory.Key);
+            NotSurvie.SetActive(!Inventory.inventory.Key);
+            Debug.Log("Game is END");
+        }
     }
-
-    // Update is called once per frame
-    void Update()
+    public void LoadMainMenuScene()
     {
-        
+        SceneUI.sceneUI.DestroyIT();
+        Inventory.inventory.DestroyIT();
+        GameManager.gameManager.DestroyIT();
+        SceneManager.LoadScene("MainMenu");
     }
-	private void OnTriggerEnter(Collider other)
-	{
-		ElevatorController.Instance.closeElevator();
-	}
 }

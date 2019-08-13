@@ -19,6 +19,9 @@ public class Inventory : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-    
+    public void DestroyIT()
+    {
+        Destroy(gameObject);
+    }
 
 }

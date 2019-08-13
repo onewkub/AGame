@@ -2,9 +2,11 @@
 
 public class LoadNextScenF2 : MonoBehaviour
 {
-    private void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        SceneLoadManager.Instance.LoaderAsync("ElevatorScene");
+        SceneLoadManager.Instance.LoaderAsync("SecondFloor");
+
+        Destroy(gameObject);
 
     }
 }
