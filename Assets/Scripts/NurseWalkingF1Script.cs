@@ -35,9 +35,9 @@ public class NurseWalkingF1Script : MonoBehaviour
         navMeshAgent.SetDestination(StartPos.position);
         yield return new WaitWhile(() => DistanceToTarget(StartPos));
         nuresPull.enabled = false;
-        newWheelMove.enabled = true;
         navMeshAgent.SetDestination(FinalPos.position);
         yield return new WaitWhile(() => DistanceToTarget(FinalPos));
+        newWheelMove.enabled = true;
         navMeshAgent.SetDestination(StandPos.position);
         yield return new WaitWhile(() => PlayerNotArrive);
         navMeshAgent.SetDestination(LastPos.position);

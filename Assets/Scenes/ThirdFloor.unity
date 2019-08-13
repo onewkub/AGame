@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -234,7 +234,7 @@ PrefabInstance:
     - target: {fileID: 472539975813509152, guid: ce4430e61feef0b4e8474a71664a09e8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 472539975813509156, guid: ce4430e61feef0b4e8474a71664a09e8,
         type: 3}
@@ -389,12 +389,22 @@ PrefabInstance:
     - target: {fileID: 472539975771378473, guid: ce4430e61feef0b4e8474a71664a09e8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -116.4
+      value: 102.6
       objectReference: {fileID: 0}
     - target: {fileID: 472539975771378473, guid: ce4430e61feef0b4e8474a71664a09e8,
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 352.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 472539975771378473, guid: ce4430e61feef0b4e8474a71664a09e8,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 472539975771378473, guid: ce4430e61feef0b4e8474a71664a09e8,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 472539975771378478, guid: ce4430e61feef0b4e8474a71664a09e8,
         type: 3}
@@ -474,7 +484,7 @@ PrefabInstance:
     - target: {fileID: 472539975319869590, guid: ce4430e61feef0b4e8474a71664a09e8,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 472539976539289648, guid: ce4430e61feef0b4e8474a71664a09e8,
         type: 3}

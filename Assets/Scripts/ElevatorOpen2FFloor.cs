@@ -10,7 +10,7 @@ public class ElevatorOpen2FFloor : MonoBehaviour
 
             ElevatorController.Instance.openElevator();
         }
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
         /*else if(other.tag == "Player")
         {
             ElevatorController.Instance.closeElevator();

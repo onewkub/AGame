@@ -8,6 +8,7 @@ public class end_game : MonoBehaviour
     public GameObject EndGameUI;
     public GameObject GhostHead;
     public GameObject Nurse;
+    private bool GameIsEnd = false;
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
@@ -17,6 +18,7 @@ public class end_game : MonoBehaviour
             EndGameUI.SetActive(true);
             Survive.SetActive(Inventory.inventory.Key);
             NotSurvie.SetActive(!Inventory.inventory.Key);
+            GameIsEnd = true;
             Debug.Log("Game is END");
         }
     }
@@ -26,5 +28,12 @@ public class end_game : MonoBehaviour
         Inventory.inventory.DestroyIT();
         GameManager.gameManager.DestroyIT();
         SceneManager.LoadScene("MainMenu");
+    }
+    private void Update()
+    {
+        if (GameIsEnd && Input.GetKey(KeyCode.Joystick1Button2))
+        {
+            LoadMainMenuScene();
+        }
     }
 }
