@@ -15,6 +15,7 @@ public class NormalNurse : MonoBehaviour
     private void Start()
     {
         scene = SceneManager.GetActiveScene();
+        walkingSound = Sound.GetComponent<AudioSource>();
         if (scene.buildIndex != 1)
         {
             transform.position = GameManager.gameManager.NursePos;
@@ -34,14 +35,14 @@ public class NormalNurse : MonoBehaviour
         }
         if (agent.remainingDistance > 0.5f)
         {
-            Debug.Log("NurseWalking");
+            //Debug.Log("NurseWalking");
             nurseController.isWalking();
             if (!walkingSound.isPlaying) walkingSound.Play();
 
         }
         else
         {
-            Debug.Log("NurseNotWalking");
+            //Debug.Log("NurseNotWalking");
             walkingSound.Stop();
             nurseController.stopWalking();
         }
