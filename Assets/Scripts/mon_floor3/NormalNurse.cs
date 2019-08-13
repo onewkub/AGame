@@ -10,13 +10,14 @@ public class NormalNurse : MonoBehaviour
     public NurseWalkingF1Script F1Script;
     public NurseAnimatorController nurseController;
     public NavMeshAgent agent;
-    public Scene scene;
-
-
-
+    public GameObject Sound;
+    private AudioSource walkingSound;
+    private Scene scene;
+    
     private void Start()
     {
         scene = SceneManager.GetActiveScene();
+        walkingSound = Sound.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -28,12 +29,19 @@ public class NormalNurse : MonoBehaviour
             else nurseController.stopWithWheelchair();
 
         }
-
-
         if (agent.remainingDistance > 0.5f)
+        {
+            Debug.Log("NurseWalking");
             nurseController.isWalking();
-        else nurseController.stopWalking();
+            if (!walkingSound.isPlaying) walkingSound.Play();
 
+        }
+        else
+        {
+            Debug.Log("NurseNotWalking");
+            walkingSound.Stop();
+            nurseController.stopWalking();
+        }
 
     }
 
@@ -47,5 +55,6 @@ public class NormalNurse : MonoBehaviour
 
         }
     }
+
 
 }

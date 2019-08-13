@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     public bool Arrived2fllor;
     public bool Arrive1FloorBloody;
-
+    private bool GameIsPause = false;
 
     private void Awake()
     {
@@ -28,5 +28,4 @@ public class GameManager : MonoBehaviour
         Arrive1FloorBloody = false;
         Arrived2fllor = false;
     }
-
 }

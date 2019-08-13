@@ -20,20 +20,36 @@ public class WheelChairMovement : MonoBehaviour
 
     private void getInput()
     {
-        m_vertical = Input.GetAxis("VerticalLeft");
-        m_horizontal = Input.GetAxis("HorizontalLeft");
+        if(Mathf.Abs(Input.GetAxis("VerticalLeft")) > 0.1f)
+        {
+            m_vertical = Input.GetAxis("VerticalLeft");
+
+        }
+        else
+        {
+            m_vertical = 0f;
+        }
+        if(Mathf.Abs(Input.GetAxis("HorizontalLeft")) > 0.1f)
+        {
+            m_horizontal = Input.GetAxis("HorizontalLeft");
+
+        }
+        else
+        {
+            m_horizontal = 0f;
+        }
+        //Debug.Log(m_vertical + " " + m_horizontal);
+
     }
 
     private void rotate()
     {
-        if (m_vertical < 0)       
-            transform.Rotate(0f, rotateSpeed * -m_horizontal * Time.deltaTime, 0f);
-        else
-            transform.Rotate(0f, rotateSpeed * m_horizontal * Time.deltaTime, 0f);
+        transform.Rotate(0f, rotateSpeed * m_horizontal * Time.deltaTime, 0f);
     }
 
     private void movement()
     {
+        
         controller.SimpleMove(moveSpeed * transform.forward * m_vertical * Time.deltaTime);
     }
 
