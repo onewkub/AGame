@@ -21,11 +21,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 62889bb5f1f24d04b894e2ecea146172, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7918c1d54f130404e89c43007f8a7381, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 69c9a394e44dc0b42bd8a10a6c9a9baa, type: 3}
+        m_Texture: {fileID: 2800000, guid: f422d4160c2c0ac48b749a0197019ac8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -33,11 +33,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 7918c1d54f130404e89c43007f8a7381, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 2ab351c363f4ae44291e4259e8b61100, type: 3}
+        m_Texture: {fileID: 2800000, guid: 86a1569939695764e9092b951bf4e298, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:

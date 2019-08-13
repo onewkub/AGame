@@ -10,8 +10,17 @@ public class SoundFXController : MonoBehaviour
             SoundFXs[0].Play();
         }
     }
+    public void ScreamSound()
+    {
+        if(SoundFXs[1] != null)
+        {
+            SoundFXs[1].Play();
+        }
+    }
+
     public bool AttackSoundIsPlaying()
     {
         return SoundFXs[0].isPlaying;
     }
+    
 }

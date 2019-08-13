@@ -19,7 +19,7 @@ public class FlashLightController : MonoBehaviour
         Flashlight.SetActive(hasFlashlight);
         if (hasFlashlight)
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetButton("Flashlight"))
             {
                 Debug.Log("!!!");
                 flashlight_.Switch();
