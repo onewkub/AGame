@@ -34,7 +34,8 @@ public class movement_ghost : MonoBehaviour
 		agent = GetComponent<NavMeshAgent>();
 		anim = GetComponent<Animator>();
 		moveplayer = player.GetComponent<WheelChairMovement>();
-		
+		audio.enabled = false;
+
 	}
 
 	// Update is called once per frame
