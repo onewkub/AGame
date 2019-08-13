@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -392,7 +392,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "<sprite index=0>\u0E40\u0E25\u0E02 3"
+  m_text: "<sprite index=0>\u0E40\u0E25\u0E02 4"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f467d683097eaa8449be72ae608eaec3, type: 2}
   m_sharedMaterial: {fileID: 2542398523213735346, guid: f467d683097eaa8449be72ae608eaec3,
@@ -1840,7 +1840,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "<sprite index=1>\u0E40\u0E25\u0E02 0"
+  m_text: "<sprite index=1>\u0E40\u0E25\u0E02 1"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f467d683097eaa8449be72ae608eaec3, type: 2}
   m_sharedMaterial: {fileID: 2542398523213735346, guid: f467d683097eaa8449be72ae608eaec3,
@@ -2232,7 +2232,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "<sprite index=2>\u0E40\u0E25\u0E02 2"
+  m_text: "<sprite index=2>\u0E40\u0E25\u0E02 3"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f467d683097eaa8449be72ae608eaec3, type: 2}
   m_sharedMaterial: {fileID: 2542398523213735346, guid: f467d683097eaa8449be72ae608eaec3,
@@ -2624,7 +2624,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "<sprite index=3>\u0E40\u0E25\u0E02 1"
+  m_text: "<sprite index=3>\u0E40\u0E25\u0E02 2"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f467d683097eaa8449be72ae608eaec3, type: 2}
   m_sharedMaterial: {fileID: 2542398523213735346, guid: f467d683097eaa8449be72ae608eaec3,
