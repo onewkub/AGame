@@ -2321,6 +2321,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1293439837}
     m_Modifications:
+    - target: {fileID: 117088, guid: 947e113398f058643a47464fff50cae1, type: 3}
+      propertyPath: m_Name
+      value: ceiling_light
+      objectReference: {fileID: 0}
+    - target: {fileID: 117088, guid: 947e113398f058643a47464fff50cae1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 403928, guid: 947e113398f058643a47464fff50cae1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
@@ -2376,14 +2384,6 @@ PrefabInstance:
     - target: {fileID: 403928, guid: 947e113398f058643a47464fff50cae1, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 117088, guid: 947e113398f058643a47464fff50cae1, type: 3}
-      propertyPath: m_Name
-      value: ceiling_light
-      objectReference: {fileID: 0}
-    - target: {fileID: 117088, guid: 947e113398f058643a47464fff50cae1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 10817028, guid: 947e113398f058643a47464fff50cae1, type: 3}
       propertyPath: m_Range
@@ -3629,6 +3629,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie
       objectReference: {fileID: 0}
+    - target: {fileID: 1300611964618398, guid: 0584839bceadb844fa31b1ca352056ba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4846736819855508, guid: 0584839bceadb844fa31b1ca352056ba, type: 3}
       propertyPath: m_LocalPosition.x
       value: 55
@@ -4838,6 +4842,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1293439837}
     m_Modifications:
+    - target: {fileID: 117088, guid: 947e113398f058643a47464fff50cae1, type: 3}
+      propertyPath: m_Name
+      value: ceiling_light (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 117088, guid: 947e113398f058643a47464fff50cae1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 403928, guid: 947e113398f058643a47464fff50cae1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 45
@@ -4893,14 +4905,6 @@ PrefabInstance:
     - target: {fileID: 403928, guid: 947e113398f058643a47464fff50cae1, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 117088, guid: 947e113398f058643a47464fff50cae1, type: 3}
-      propertyPath: m_Name
-      value: ceiling_light (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 117088, guid: 947e113398f058643a47464fff50cae1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 10817028, guid: 947e113398f058643a47464fff50cae1, type: 3}
       propertyPath: m_Range
@@ -8568,6 +8572,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1663595034823268935, guid: 5354220bbb34c384a81e1f5a4e9c717d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1663595034823126209, guid: 5354220bbb34c384a81e1f5a4e9c717d,
         type: 3}
       propertyPath: m_IsActive
@@ -8592,11 +8601,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Intensity
       value: 2.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1663595034823268935, guid: 5354220bbb34c384a81e1f5a4e9c717d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5354220bbb34c384a81e1f5a4e9c717d, type: 3}
@@ -9889,6 +9893,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1293439837}
     m_Modifications:
+    - target: {fileID: 117088, guid: 947e113398f058643a47464fff50cae1, type: 3}
+      propertyPath: m_Name
+      value: ceiling_light (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 117088, guid: 947e113398f058643a47464fff50cae1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 403928, guid: 947e113398f058643a47464fff50cae1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 60
@@ -9944,14 +9956,6 @@ PrefabInstance:
     - target: {fileID: 403928, guid: 947e113398f058643a47464fff50cae1, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 117088, guid: 947e113398f058643a47464fff50cae1, type: 3}
-      propertyPath: m_Name
-      value: ceiling_light (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 117088, guid: 947e113398f058643a47464fff50cae1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 10817028, guid: 947e113398f058643a47464fff50cae1, type: 3}
       propertyPath: m_Range
@@ -11069,6 +11073,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1293439837}
     m_Modifications:
+    - target: {fileID: 117088, guid: 947e113398f058643a47464fff50cae1, type: 3}
+      propertyPath: m_Name
+      value: ceiling_light (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 117088, guid: 947e113398f058643a47464fff50cae1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 403928, guid: 947e113398f058643a47464fff50cae1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 45
@@ -11124,14 +11136,6 @@ PrefabInstance:
     - target: {fileID: 403928, guid: 947e113398f058643a47464fff50cae1, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 117088, guid: 947e113398f058643a47464fff50cae1, type: 3}
-      propertyPath: m_Name
-      value: ceiling_light (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 117088, guid: 947e113398f058643a47464fff50cae1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 10817028, guid: 947e113398f058643a47464fff50cae1, type: 3}
       propertyPath: m_Range
