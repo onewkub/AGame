@@ -22,11 +22,13 @@ public class BrokenLight : MonoBehaviour
             m_light.enabled = !m_light.enabled;
             if (!m_light.enabled)
             {
-                mesh.material.SetColor("_EmissionColor", new Color(0, 0, 0));
+				if(mesh != null)
+					mesh.material.SetColor("_EmissionColor", new Color(0, 0, 0));
             }
             else
             {
-                mesh.material.SetColor("_EmissionColor", new Color(1, 1, 1));
+				if (mesh != null)
+					mesh.material.SetColor("_EmissionColor", new Color(1, 1, 1));
             }
         }
     }

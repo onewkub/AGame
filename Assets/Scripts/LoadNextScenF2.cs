@@ -2,7 +2,7 @@
 
 public class LoadNextScenF2 : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (Time.timeSinceLevelLoad > 1f)
             SceneLoadManager.Instance.LoaderAsync("ElevatorScene");

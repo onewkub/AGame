@@ -55,5 +55,6 @@ public class ObjectiveTrigger : MonoBehaviour
             yield return null;
         }
         midText.color = new Color(1, 1, 1, 0);
-    }
+		
+	}
 }

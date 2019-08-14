@@ -16,7 +16,7 @@ public class CameraView : MonoBehaviour
     private void Update()
     {
         CameraRotation();
-        if (Input.GetButtonDown("RightBumper"))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button5))
         {
             transform.localRotation = Quaternion.identity;
             mainCam.transform.localRotation = Quaternion.identity;
