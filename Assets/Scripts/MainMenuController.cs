@@ -2,18 +2,11 @@
 
 public class MainMenuController : MonoBehaviour
 {
-    public GameObject PrepareScene;
     public GameObject WSCanvas;
-
-    public void Start()
-    {
-        PrepareScene.SetActive(false);
-    }
 
     public void LoadPrepareScene()
     {
         Debug.Log("LoadPrepareScene");
-        PrepareScene.SetActive(true);
         WSCanvas.SetActive(false);
         SceneLoadManager.Instance.LoaderAsync("FirstFloor_start");
         SceneLoadManager.Instance.SwitchSceneinLoading();
