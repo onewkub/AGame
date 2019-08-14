@@ -4,7 +4,8 @@ public class LoadNextScene : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        SceneLoadManager.Instance.LoaderAsync("SecondFloor", 5);
+        if (Time.timeSinceLevelLoad > 1f)
+            SceneLoadManager.Instance.LoaderAsync("SecondFloor");
 
     }
 }

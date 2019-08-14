@@ -9,5 +9,6 @@ public class LookAtter : MonoBehaviour
     void Update()
     {
         transform.LookAt(target);
+        transform.RotateAround(transform.position, transform.up, 180f);
     }
 }

@@ -3,6 +3,7 @@
 public class MainMenuController : MonoBehaviour
 {
     public GameObject PrepareScene;
+    public GameObject WSCanvas;
 
     public void Start()
     {
@@ -13,6 +14,9 @@ public class MainMenuController : MonoBehaviour
     {
         Debug.Log("LoadPrepareScene");
         PrepareScene.SetActive(true);
+        WSCanvas.SetActive(false);
+        SceneLoadManager.Instance.LoaderAsync("FirstFloor_start");
+        SceneLoadManager.Instance.SwitchSceneinLoading();
     }
     private void Update()
     {
