@@ -13,7 +13,6 @@ public class SceneUI : MonoBehaviour
         }
         else
         {
-            DontDestroyOnLoad(gameObject);
             sceneUI = this;
         }
     }
