@@ -2,7 +2,7 @@
 
 public class NursePull : MonoBehaviour
 {
-    private WheelChairMovement Controlable;
+    //private WheelChairMovement Controlable;
     public Transform ObjectToFollow;
     public Vector3 offset;
     public float followSpeed = 10f;
@@ -10,8 +10,8 @@ public class NursePull : MonoBehaviour
 
     private void Start()
     {
-        Controlable = GetComponent<WheelChairMovement>();
-        Controlable.enabled = false;
+        //Controlable = GetComponent<WheelChairMovement>();
+        //Controlable.enabled = false;
     }
     public void followTarget()
     {
