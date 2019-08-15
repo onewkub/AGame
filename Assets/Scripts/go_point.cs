@@ -7,7 +7,7 @@ public class go_point : MonoBehaviour
 	NavMeshAgent nav;
     // Start is called before the first frame update
 	public GameObject point_go;
-	public Animator anim;
+    Animator anim;
 	AudioSource audio;
 	float distace;
     void Start()
