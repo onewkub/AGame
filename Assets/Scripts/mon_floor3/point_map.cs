@@ -14,7 +14,7 @@ public class point_map : MonoBehaviour
 	public GameObject nurse;
 	float timer = 0;
 	public bool  playerstop=false;
-	public WheelChairMovement playermove;
+	//public WheelChairMovement playermove;
 	float timerstop=0;
 	public float timestop = 0;
 	public AudioSource ting;
@@ -35,7 +35,7 @@ public class point_map : MonoBehaviour
 		timerstop -= Time.deltaTime;
 		if (timerstop <= 0)
 		{
-			playermove.enabled = true;
+            PlayerMovement.Instance.agent.Resume();
 		}
 		if (point_ghost_in_room.ghost_state == false )
 		{
@@ -53,7 +53,8 @@ public class point_map : MonoBehaviour
 			if (playerstop == false)
 			{
 				timerstop = timestop;
-				playermove.enabled = false;
+                //playermove.enabled = false;
+                PlayerMovement.Instance.agent.Stop();
 				playerstop = true;
 			}
 			move.gopoint = true;

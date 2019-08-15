@@ -17,34 +17,35 @@ public class WalkingPath : MonoBehaviour
             Instance = this;
         }
     }
-
-    public GameObject[] Path;
-
+    public GameObject start;
     private int currentIndex = 0;
     private bool _trigger = false;
+    public GameObject ChoosenPosition;
+    public bool haveChoose = false;
+    public bool ChoosePathState = false;
 
     private void Update()
     {
-        if (_trigger)
+        if (_trigger && haveChoose)
         {
-            if (currentIndex + 1 < Path.Length)
-            {
-                currentIndex++;
-                Path[currentIndex].SetActive(true);
-                PlayerMovement.Instance.agent.SetDestination(Path[currentIndex].transform.position);
-
-                _trigger = false;
-            }
+            PlayerMovement.Instance.agent.SetDestination(ChoosenPosition.transform.position);
+            ChoosenPosition.SetActive(true);
+            _trigger = haveChoose = false;
+            ChoosePathState = false;
         }
     }
     private void OnEnable()
     {
-        Path[currentIndex].SetActive(true);
-        PlayerMovement.Instance.agent.SetDestination(Path[currentIndex].transform.position);
+        start.SetActive(true);
+        PlayerMovement.Instance.agent.SetDestination(start.transform.position);
     }
 
     public void isTrigger()
     {
         _trigger = true;
+    }
+    public bool getTrigger()
+    {
+        return _trigger;
     }
 }

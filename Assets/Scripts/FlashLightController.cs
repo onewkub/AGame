@@ -19,7 +19,7 @@ public class FlashLightController : MonoBehaviour
         Flashlight.SetActive(hasFlashlight);
         if (hasFlashlight)
         {
-            if (Input.GetButtonDown("Flashlight"))
+            if (Input.GetButtonDown("Up") && !WalkingPath.Instance.getTrigger())
                 flashlight_.Switch();
             
         }
