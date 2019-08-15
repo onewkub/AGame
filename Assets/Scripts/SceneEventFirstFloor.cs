@@ -8,6 +8,7 @@ public class SceneEventFirstFloor : MonoBehaviour
 
     private void Start()
     {
+        SoundController.Instance.EleavotorArrivePlay();
         OpenTrigger.SetActive(false);
         CloseTrigger.SetActive(false);
     }
