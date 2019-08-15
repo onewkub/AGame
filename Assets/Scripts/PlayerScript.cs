@@ -2,14 +2,14 @@
 using UnityEngine.SceneManagement;
 public class PlayerScript : MonoBehaviour
 {
-    public CharacterController controller;
+    //public CharacterController controller;
     public GameObject head;
     public GameObject cam;
 
 
     private void Start()
     {
-        controller.enabled = false;
+        //controller.enabled = false;
         if (GameManager.gameManager.PlayerPos != null && SceneManager.GetActiveScene().buildIndex != 1)
         {
             //Debug.Log("Set Pos in " + scene.name + " AT " + GameManager.gameManager.PlayerPos);
@@ -20,7 +20,7 @@ public class PlayerScript : MonoBehaviour
             //head.transform.rotation = GameManager.gameManager.headRot;
             //cam.transform.rotation = GameManager.gameManager.camRot;
         }
-        controller.enabled = true;
+        //controller.enabled = true;
     }
 
 }

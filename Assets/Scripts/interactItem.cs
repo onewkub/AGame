@@ -6,7 +6,7 @@ public class interactItem : MonoBehaviour
     public Transform objectToLook;
     public GameObject openTrigger;
     public GameObject closeTrigger;
-    public GameObject GhostHead;
+    //public GameObject GhostHead;
 
     private bool PlayerOnArea = false;
     private void Start()

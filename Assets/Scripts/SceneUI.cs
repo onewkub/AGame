@@ -17,7 +17,7 @@ public class SceneUI : MonoBehaviour
             sceneUI = this;
         }
     }
-    public GameObject Key, Flashlight;
+    public GameObject Key, Flashlight, FlashlightUI;
 
     private RawImage KeyCom, FlashlightCom;
 
@@ -31,16 +31,18 @@ public class SceneUI : MonoBehaviour
 
 
     }
-    private void FixedUpdate()
+    private void Update()
     {
         if (Inventory.inventory.FlashLight)
         {
             FlashlightCom.color = new Color(255f, 255f, 255f, 1f);
-        }
+			FlashlightUI.SetActive(true);
+		}
         if (Inventory.inventory.Key)
         {
             KeyCom.color = new Color(255f, 255f, 255f, 1f);
         }
+		
     }
     public void DestroyIT()
     {
