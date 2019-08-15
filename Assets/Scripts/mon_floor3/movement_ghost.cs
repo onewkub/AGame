@@ -16,7 +16,7 @@ public class movement_ghost : MonoBehaviour
 	public GameObject p2;
 	public GameObject p3;
 	public GameObject p4;
-	WheelChairMovement moveplayer;
+	//WheelChairMovement moveplayer;
 	public float time_hold = 3;
 	float timer_hold = 0;
 	public float time_stun = 3;
@@ -36,7 +36,7 @@ public class movement_ghost : MonoBehaviour
 		audio = gameObject.GetComponent<AudioSource>();
 		agent = GetComponent<NavMeshAgent>();
 		anim = GetComponent<Animator>();
-		moveplayer = player.GetComponent<WheelChairMovement>();
+		//moveplayer = player.GetComponent<WheelChairMovement>();
 		audio.enabled = false;
 
 	}
@@ -74,7 +74,7 @@ public class movement_ghost : MonoBehaviour
 				nursemove.playerhide = false;
 				timer_hold -= Time.deltaTime;
 				anim.SetBool("holdplayer",true);
-				moveplayer.enabled = false;
+				//moveplayer.enabled = false;
 				if (timer_hold<0)
 				{
 					

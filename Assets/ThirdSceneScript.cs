@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameSystem : MonoBehaviour
+public class ThirdSceneScript : MonoBehaviour
 {
+    public GameObject PlayerWayPoint;
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        PlayerWayPoint.SetActive(true);
     }
 }

@@ -3,7 +3,6 @@
 public class interactItem : MonoBehaviour
 {
     public GameObject canvas;
-    public Transform objectToLook;
     public GameObject openTrigger;
     public GameObject closeTrigger;
     //public GameObject GhostHead;
@@ -16,19 +15,13 @@ public class interactItem : MonoBehaviour
 
     private void Update()
     {
-        lookAtObject();
-        if(Input.GetButton("InteractItem") && PlayerOnArea)
+        if(Input.GetButton("Right") && PlayerOnArea)
         {
             Destroy(gameObject);
         }
     }
 
 
-
-    private void lookAtObject()
-    {
-        canvas.transform.LookAt(objectToLook, Vector3.up);
-    }
 
 
     private void OnTriggerEnter(Collider other)
