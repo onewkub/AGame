@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class SceneLoadManager : MonoBehaviour
 {
     public static SceneLoadManager Instance { get; private set; }
+    public GameObject loadingCanvas;
     private AsyncOperation loading;
     private string sceneName;
 
@@ -40,6 +41,7 @@ public class SceneLoadManager : MonoBehaviour
 
     public void SwitchSceneinLoading()
     {
+        loadingCanvas.SetActive(true);
         loading.allowSceneActivation = true;
     }
 

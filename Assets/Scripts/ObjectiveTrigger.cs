@@ -15,7 +15,7 @@ public class ObjectiveTrigger : MonoBehaviour
         if (sideText)
         {
             sideText.text = "เป้าหมาย: " + objective;
-            midText.text = "เป้าหมาย:\n" + objective;
+            midText.text = "เป้าหมาย\n" + objective;
         }
         else
         {

@@ -6,6 +6,7 @@ public class interactItem : MonoBehaviour
     public Transform objectToLook;
     public GameObject openTrigger;
     public GameObject closeTrigger;
+    public GameObject GhostHead;
 
     private bool PlayerOnArea = false;
     private void Start()
@@ -55,6 +56,7 @@ public class interactItem : MonoBehaviour
         {
             Debug.Log("Get Key");
             Inventory.inventory.Key = true;
+            //GhostHead.SetActive(true);
         }
         else if(gameObject.tag == "Flashlight")
         {
