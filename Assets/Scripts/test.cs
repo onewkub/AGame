@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class test : MonoBehaviour
 {
-    void Start()
+    private void Start()
     {
-        PlayerMovement.Instance.SetDestination(gameObject.transform.position);
+
+
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Yeah");
     }
 }

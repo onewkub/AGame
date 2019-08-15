@@ -222,6 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 772034306}
   - component: {fileID: 772034307}
+  - component: {fileID: 772034308}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -255,6 +256,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c9718f05e34ce546b98b8a55d7b134a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &772034308
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772034305}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.988052, y: 9.988052, z: 9.988052}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1249898602
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +402,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8438636918885457156, guid: 8fa1401e957851142a236b6ff0cf1357,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2974530461332743765, guid: 8fa1401e957851142a236b6ff0cf1357,
         type: 3}
       propertyPath: m_Enabled
@@ -398,10 +417,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8438636918885457156, guid: 8fa1401e957851142a236b6ff0cf1357,
+    - target: {fileID: 8438636918885457159, guid: 8fa1401e957851142a236b6ff0cf1357,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: m_Constraints
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 8438636918885457158, guid: 8fa1401e957851142a236b6ff0cf1357,
         type: 3}
