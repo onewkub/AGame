@@ -16,11 +16,11 @@ public class PlayerScript : MonoBehaviour
             Debug.Log("Set Position");
             
             transform.position = GameManager.gameManager.PlayerPos;
-            transform.rotation = GameManager.gameManager.PlayerRot;
-            head.transform.rotation = GameManager.gameManager.headRot;
-            cam.transform.rotation = GameManager.gameManager.camRot;
-        }*/
-        //controller.enabled = true;
+            //transform.rotation = GameManager.gameManager.PlayerRot;
+            //head.transform.rotation = GameManager.gameManager.headRot;
+            //cam.transform.rotation = GameManager.gameManager.camRot;
+        }
+        controller.enabled = true;
     }
 
 }
