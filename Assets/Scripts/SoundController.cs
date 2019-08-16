@@ -7,6 +7,7 @@ public class SoundController : MonoBehaviour
     public static SoundController Instance { get; set; }
     public AudioSource BGMusic;
     public AudioSource ElevatorArrive;
+	public AudioSource[] SoundFX;
 
     private void Awake()
     {
@@ -27,4 +28,6 @@ public class SoundController : MonoBehaviour
     {
         ElevatorArrive.Play();
     }
+
+	
 }

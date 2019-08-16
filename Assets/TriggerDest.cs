@@ -20,12 +20,15 @@ public class TriggerDest : MonoBehaviour
             //gameObject.SetActive(false);
         }
     }
-    private void OnTriggerExit(Collider other)
+	private void OnTriggerExit(Collider other)
     {
+		Debug.Log("In out Trigger funtion");
         if(other.tag == "Player")
         {
+			Debug.Log("Out of Trigger");
             WalkingPath.Instance.ChoosePathState = false;
-
+			Script.enabled = false;
+			UI.SetActive(false);
             gameObject.SetActive(false);
 
         }

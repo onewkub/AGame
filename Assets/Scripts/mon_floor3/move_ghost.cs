@@ -13,7 +13,7 @@ public class move_ghost : MonoBehaviour
 	public GameObject player;
 	public bool playerhide;
 	float dist;
-	public float range = 8;
+	public float range = 7;
 	public float delay = 10;
     float timer = 10;
 	public float run = 7f;
@@ -41,7 +41,7 @@ public class move_ghost : MonoBehaviour
 		{
 			audio.enabled = true;
 			agent.speed = 5f;
-			agent.stoppingDistance = range;
+			agent.stoppingDistance = range-2;
 			timer += Time.deltaTime;
 			agent.SetDestination(player.transform.position);
 			dist = Vector3.Distance(player.transform.position, transform.position);
