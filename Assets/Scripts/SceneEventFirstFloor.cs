@@ -19,5 +19,7 @@ public class SceneEventFirstFloor : MonoBehaviour
         CloseTrigger.SetActive(true);
         InsideTrigger.SetActive(false);
 
+
+
     }
 }

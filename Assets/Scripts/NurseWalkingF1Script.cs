@@ -13,7 +13,7 @@ public class NurseWalkingF1Script : MonoBehaviour
     public Transform LastPos;
     public GameObject WheelChair;
     public GameObject CloseTrigger;
-    public GameObject PlayerWaypoint;
+    //public GameObject PlayerWaypoint;
 
     public bool PlayerNotArrive = true;
 
@@ -47,7 +47,7 @@ public class NurseWalkingF1Script : MonoBehaviour
         //newWheelMove.enabled = true;
         Player.enabled = true;
         playerMovement.enabled = true;
-        PlayerWaypoint.SetActive(true);
+        AutoPlay.Instance.StartScript();
         navMeshAgent.SetDestination(StandPos.position);
         yield return new WaitWhile(() => PlayerNotArrive);
         navMeshAgent.SetDestination(LastPos.position);

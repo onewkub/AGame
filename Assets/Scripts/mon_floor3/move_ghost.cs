@@ -21,8 +21,8 @@ public class move_ghost : MonoBehaviour
 	public GameObject point_find;
 	AudioSource audio;
     //public WheelChairMovement move;
-    public GameObject inHiddingSpot;
-    public GameObject Escape;
+    //public GameObject inHiddingSpot;
+    //public GameObject Escape;
     public GameObject Head;
 	// Start is called before the first frame update
 	void Start()
@@ -105,7 +105,9 @@ public class move_ghost : MonoBehaviour
 				{
                     //move.enabled = true;
                     Debug.Log("Done");
-                    inHiddingSpot.GetComponent<ChooseTheWay>().Left = Escape;
+                    //inHiddingSpot.GetComponent<ChooseTheWay>().Left = Escape;
+                    AutoPlay.Instance.itTrigger();
+                    PlayerMovement.Instance.agent.Resume();
 					backlift = true;
 					audio.enabled = true;
 					anim.SetBool("isRunning", true);

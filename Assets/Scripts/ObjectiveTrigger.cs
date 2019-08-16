@@ -12,6 +12,7 @@ public class ObjectiveTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         if (sideText)
         {
             sideText.text = "เป้าหมาย: " + objective;

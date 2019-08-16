@@ -498,6 +498,16 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 9207874140085463580, guid: ce573303c7de55446915116ff6c09dcf,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207874140085463580, guid: ce573303c7de55446915116ff6c09dcf,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce573303c7de55446915116ff6c09dcf, type: 3}
 --- !u!224 &8008221188378009071 stripped
@@ -513,11 +523,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7696755858878167009}
     m_Modifications:
-    - target: {fileID: 5488518435946796106, guid: 98792c3187011ca4eb9df6da6f771d26,
-        type: 3}
-      propertyPath: m_Name
-      value: SoundController
-      objectReference: {fileID: 0}
     - target: {fileID: 5038562833437471238, guid: 98792c3187011ca4eb9df6da6f771d26,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -572,6 +577,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5488518435946796106, guid: 98792c3187011ca4eb9df6da6f771d26,
+        type: 3}
+      propertyPath: m_Name
+      value: SoundController
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98792c3187011ca4eb9df6da6f771d26, type: 3}

@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerDestAndRotate : MonoBehaviour
+public class HiddingSpot : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            AutoPlay.Instance.itTrigger();
+            Debug.Log("Im hidding");
+            PlayerMovement.Instance.agent.Stop();
             PlayerMovement.Instance.RotateToTarget(transform.rotation);
         }
     }

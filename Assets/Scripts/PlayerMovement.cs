@@ -30,13 +30,13 @@ public class PlayerMovement : MonoBehaviour
         }
 		if (agent != null && agent.remainingDistance >= 3f)
 		{
-			Debug.Log("walk");
+			//Debug.Log("walk");
 
 			isWalking = true;
 		}
 		else if(agent != null)
 		{
-			Debug.Log("idle");
+			//Debug.Log("idle");
 			isWalking = false;
 		}
     }

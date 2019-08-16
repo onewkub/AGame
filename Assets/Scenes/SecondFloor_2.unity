@@ -514,8 +514,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 889992252}
-  - component: {fileID: 889992253}
   - component: {fileID: 889992254}
+  - component: {fileID: 889992253}
   m_Layer: 0
   m_Name: LoadNextScene
   m_TagString: Untagged
@@ -546,7 +546,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 889992251}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e204109b8ffe4d7459b35a946c6f8b5b, type: 3}
+  m_Script: {fileID: 11500000, guid: da27db48e55d5fc4781cf2f1a7fb304e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &889992254

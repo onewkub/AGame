@@ -18,7 +18,7 @@ public class SceneEventFirstBloodyFloor : MonoBehaviour
     }
     private void Start()
     {
-        PlayerWayPoint.SetActive(true);
+        AutoPlay.Instance.StartScript();
     }
     public void closeAllLight()
     {

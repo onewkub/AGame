@@ -6,7 +6,7 @@ public class LoadNextSceneF1Bloody : MonoBehaviour
     {
         if (Time.timeSinceLevelLoad > 1f)
         {
-            SceneLoadManager.Instance.LoaderAsync("ElevatorScene");
+            SceneLoadManager.Instance.LoaderAsync("ThirdFloor");
             GameManager.gameManager.Arrive1FloorBloody = true;
             Destroy(gameObject);
         }

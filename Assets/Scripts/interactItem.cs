@@ -30,6 +30,7 @@ public class interactItem : MonoBehaviour
         {
             canvas.SetActive(true);
             PlayerOnArea = true;
+            Destroy(gameObject);
         }
     }
 
