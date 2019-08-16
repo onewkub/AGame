@@ -20,7 +20,7 @@ public class point_map : MonoBehaviour
 	public AudioSource ting;
 	public AudioSource lift;
 	float timers =1.5f;
-
+	public AudioSource audio;
 
 	void Start()
     {
@@ -54,6 +54,7 @@ public class point_map : MonoBehaviour
 			{
 				timerstop = timestop;
                 //playermove.enabled = false;
+				
                 PlayerMovement.Instance.agent.Stop();
 				playerstop = true;
 			}

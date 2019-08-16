@@ -40,7 +40,7 @@ public class move_ghost : MonoBehaviour
 		if (!playerhide)
 		{
 			audio.enabled = true;
-			agent.speed = 5f;
+			agent.speed = run;
 			agent.stoppingDistance = range-2;
 			timer += Time.deltaTime;
 			agent.SetDestination(player.transform.position);
@@ -76,7 +76,7 @@ public class move_ghost : MonoBehaviour
 			if (backlift)
 			{
 				audio.enabled = true;
-				agent.speed = 5f;
+				agent.speed = run;
 				agent.SetDestination(point_frontlift.transform.position);
 				dist = Vector3.Distance(point_frontlift.transform.position, transform.position);
 				if (dist <=3)

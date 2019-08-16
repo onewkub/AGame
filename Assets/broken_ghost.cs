@@ -18,8 +18,9 @@ public class broken_ghost : MonoBehaviour
 	{
 		if (max_time < 0)
 		{
-			this.enabled = false;
 			disppear.SetActive(false);
+			this.enabled = false;
+			
 		}
 		timer -= Time.deltaTime;
 		max_time -= Time.deltaTime;

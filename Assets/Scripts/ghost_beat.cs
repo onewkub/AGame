@@ -20,6 +20,7 @@ public class ghost_beat : MonoBehaviour
 	int co = 3;
 	public AudioSource audio;
 	go_point go;
+	public AudioSource audiokey;
 	
 	void Start()
     {
@@ -33,7 +34,12 @@ public class ghost_beat : MonoBehaviour
 		timer -= Time.deltaTime;
 		if (point_chair.state == true)
 		{
-			ghost_HM.SetActive(false);
+			if (ghost_HM.active)
+			{
+				audiokey.enabled = true;
+				ghost_HM.SetActive(false);
+			}
+			
 			
 		}
 		

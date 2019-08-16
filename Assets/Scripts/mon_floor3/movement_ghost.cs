@@ -61,7 +61,7 @@ public class movement_ghost : MonoBehaviour
 			go(p3, p4);
 
 		}
-		if (play) {
+		if (play && !Inventory.inventory.FlashLight) {
 			idle = false;
 			audio.enabled = true;
 			anim.SetBool("walk", false);
@@ -72,9 +72,11 @@ public class movement_ghost : MonoBehaviour
 				
 				nursemove.backlift = false;
 				nursemove.playerhide = false;
-				timer_hold -= Time.deltaTime;
+				
 				anim.SetBool("holdplayer",true);
 				//moveplayer.enabled = false;
+				PlayerMovement.Instance.agent.Stop();
+				
 				if (timer_hold<0)
 				{
 					
@@ -101,7 +103,7 @@ public class movement_ghost : MonoBehaviour
 				idle = false;
 				agent.SetDestination(player.transform.position);
 			}
-			agent.stoppingDistance = range;
+			agent.stoppingDistance = range-2;
 			agent.speed = run;
 			
 			dist = Vector3.Distance(player.transform.position, transform.position);
