@@ -5,32 +5,37 @@ using UnityEngine;
 public class breath_sound : MonoBehaviour
 {
 	public AudioSource audio;
-	float distance;
+	public float distance;
 	public GameObject Ghost;
-	public float max_time=0.2f;
+	public float petch=1;
+	public float volume=1.5f;
 	float timer=0;
     // Start is called before the first frame update
     void Start()
     {
 		
-    }
+	}
 
     // Update is called once per frame
     void Update()
     {
-		if (Ghost.active == true)
+		if ( Ghost!=null && Ghost.active == true)
 		{
-			timer -= Time.deltaTime;
+			audio.enabled = true;
 			distance = Vector3.Distance(transform.position, Ghost.transform.position);
 			distance /= 40;
-			max_time = 2.1f-(1/1+Mathf.Exp(-distance));
-			if (timer < 0)
-			{
-				audio.Play();
-				timer = max_time;
-			}
-			
+			audio.pitch = petch+(1 / 1 + Mathf.Exp(-distance));
+			distance /= 2;
+			audio.volume =  (-volume)+ (1 / 1 + Mathf.Exp(-distance));
+
+
 		}
+		else
+		{
+			audio.enabled = false;
+
+		}
+		
 		
     }
 }

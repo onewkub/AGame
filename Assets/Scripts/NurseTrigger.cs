@@ -18,6 +18,7 @@ public class NurseTrigger : MonoBehaviour
             MadnessNures.GetComponent<NurseMadnessSecondFloor>().SetTargetPostion(Player.transform);
             Runtrigger.SetActive(true);
             SounfFXTrigger.SetActive(true);
+			SoundController.Instance.BGMusic.Stop();
         }
     }
 }

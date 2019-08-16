@@ -7,16 +7,18 @@ public class ghost_beat : MonoBehaviour
 	// Start is called before the first frame update
 	bool leftroom;
 	bool rightroom;
-	bool chair=false;
+	
 	public point_check point_chair;
 	public point_check on_left_room;
 	public point_check on_right_room;
 	public point_check on_lift;
 	public GameObject ghost_HM;
-	
+	public GameObject ghost_HM2;
 	public float max_time = 0.5f;
+	public broken_ghost broken;
 	float timer = 0;
 	int co = 3;
+	public AudioSource audio;
 	go_point go;
 	
 	void Start()
@@ -31,44 +33,16 @@ public class ghost_beat : MonoBehaviour
 		timer -= Time.deltaTime;
 		if (point_chair.state == true)
 		{
-			chair = true;
-
-		}
-		if (chair)
-		{
-
-			if (co > 0)
-			{
-				if (timer > 0)
-				{
-					return;
-				}
-				else
-				{
-					if (ghost_HM.active == true)
-					{
-						ghost_HM.SetActive(false);
-					}
-					else
-					{
-						ghost_HM.SetActive(true);
-						co -= 1;
-					}
-					timer = max_time;
-				}
-			}
-			else
-			{
-				ghost_HM.SetActive(false);
-			}
+			ghost_HM.SetActive(false);
 			
 		}
+		
 		if (on_left_room.state == true && leftroom == false) // ไปทางซ้ายด้วยไม่ผ่านทางขวาเท่านั้น
 		{
 			leftroom = true;
-
-		
-			
+			ghost_HM.SetActive(true);
+			broken.enabled=true;
+			audio.enabled = true;
 			if (rightroom == false)
 			{
 				ghost_HM.SetActive(true);

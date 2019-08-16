@@ -51,6 +51,7 @@ public class end_game : MonoBehaviour
     {
         if (GameIsEnd && Input.GetKey(KeyCode.Joystick1Button2))
         {
+			GameSystem.Instance.DestroyIt();
             LoadMainMenuScene();
         }
     }

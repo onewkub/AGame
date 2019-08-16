@@ -28,13 +28,13 @@ public class PlayerMovement : MonoBehaviour
             else
                 turnToRotation();
         }
-		if (agent.remainingDistance >= 3f)
+		if (agent != null && agent.remainingDistance >= 3f)
 		{
 			Debug.Log("walk");
 
 			isWalking = true;
 		}
-		else
+		else if(agent != null)
 		{
 			Debug.Log("idle");
 			isWalking = false;
