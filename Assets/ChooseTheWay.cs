@@ -42,7 +42,7 @@ public class ChooseTheWay : MonoBehaviour
                 ForwardButton.SetActive(false);
             if(BackwardButton != null)
                 BackwardButton.SetActive(false);
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
         else if (Input.GetButtonDown("Right") && Right != null && !HaveChoose)
         {
@@ -56,7 +56,7 @@ public class ChooseTheWay : MonoBehaviour
                 ForwardButton.SetActive(false);
             if (BackwardButton != null)
                 BackwardButton.SetActive(false);
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
 
 
 
@@ -74,7 +74,7 @@ public class ChooseTheWay : MonoBehaviour
             if (BackwardButton != null)
                 BackwardButton.SetActive(false);
 
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
 
 
         }
@@ -90,7 +90,7 @@ public class ChooseTheWay : MonoBehaviour
                 ForwardButton.SetActive(false);
             if (ForwardButton != null)
                 ForwardButton.SetActive(false);
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
 
         }
     }

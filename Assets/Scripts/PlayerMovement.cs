@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
             Instance = this;
         originRotation = transform.rotation;
     }
-
+	public bool isWalking = false;
     private void Update()
     {
         if (Rotate)
@@ -28,6 +28,17 @@ public class PlayerMovement : MonoBehaviour
             else
                 turnToRotation();
         }
+		if (agent.remainingDistance >= 3f)
+		{
+			Debug.Log("walk");
+
+			isWalking = true;
+		}
+		else
+		{
+			Debug.Log("idle");
+			isWalking = false;
+		}
     }
     public void turnToRotation()
     {
