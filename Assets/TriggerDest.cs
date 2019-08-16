@@ -6,6 +6,7 @@ public class TriggerDest : MonoBehaviour
 {
     public GameObject UI;
     public ChooseTheWay Script;
+	public CheckConditionBeforeLeave s1;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -14,7 +15,10 @@ public class TriggerDest : MonoBehaviour
             WalkingPath.Instance.isTrigger();
             Script.enabled = true;
             UI.SetActive(true);
-            
+			if (s1 != null)
+			{
+				s1.enabled = true;
+			}
             WalkingPath.Instance.ChoosePathState = true;
 
             //gameObject.SetActive(false);

@@ -53,6 +53,8 @@ public class end_game : MonoBehaviour
         {
 			GameSystem.Instance.DestroyIt();
             LoadMainMenuScene();
+			SoundController.Instance.BGMusic.Stop();
         }
     }
+
 }
