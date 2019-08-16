@@ -6,6 +6,7 @@ public class BrokenLight : MonoBehaviour
     private Light m_light;
     private MeshRenderer mesh;
     public float minVal, maxVal;
+
     private void Start()
     {
         m_light = GetComponent<Light>();

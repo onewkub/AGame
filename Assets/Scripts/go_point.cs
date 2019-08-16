@@ -26,7 +26,7 @@ public class go_point : MonoBehaviour
 		distace = Vector3.Distance(gameObject.transform.position, point_go.transform.position);
 		if (distace <= 1)
 		{
-			Destroy(gameObject);
+			gameObject.SetActive(false);
 		}
     }
 }

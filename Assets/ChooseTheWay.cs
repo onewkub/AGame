@@ -14,11 +14,9 @@ public class ChooseTheWay : MonoBehaviour
     public GameObject RightButton; 
     public GameObject ForwardButton;
     public GameObject BackwardButton;
-    private bool HaveChoose;
     private void Start()
     {
         //CheckTheWay();
-        HaveChoose = false;
     }
     private void CheckTheWay()
     {
@@ -30,10 +28,10 @@ public class ChooseTheWay : MonoBehaviour
     private void Update()
     {   if(!WalkingPath.Instance.haveChoose)
             CheckTheWay();
-        if (Input.GetButtonDown("Left") && Left != null && !HaveChoose)
+        if (Input.GetButtonDown("Left") && Left != null)
         {
             Debug.Log("Choose Left");
-            HaveChoose = true;
+
             WalkingPath.Instance.ChoosenPosition = Left;
             WalkingPath.Instance.haveChoose = true;
             if(RightButton != null)
@@ -42,9 +40,10 @@ public class ChooseTheWay : MonoBehaviour
                 ForwardButton.SetActive(false);
             if(BackwardButton != null)
                 BackwardButton.SetActive(false);
-            gameObject.SetActive(false);
+			//gameObject.SetActive(false);
+			this.enabled = false;
         }
-        else if (Input.GetButtonDown("Right") && Right != null && !HaveChoose)
+        else if (Input.GetButtonDown("Right") && Right != null)
         {
             Debug.Log("Choose Right");
             
@@ -56,12 +55,14 @@ public class ChooseTheWay : MonoBehaviour
                 ForwardButton.SetActive(false);
             if (BackwardButton != null)
                 BackwardButton.SetActive(false);
-            gameObject.SetActive(false);
+			this.enabled = false;
+
+			//gameObject.SetActive(false);
 
 
 
-        }
-        else if (Input.GetButtonDown("Up") && Forward != null && !HaveChoose)
+		}
+		else if (Input.GetButtonDown("Up") && Forward != null)
         {
             Debug.Log("Choose Forward");
 
@@ -73,12 +74,14 @@ public class ChooseTheWay : MonoBehaviour
                 LeftButton.SetActive(false);
             if (BackwardButton != null)
                 BackwardButton.SetActive(false);
+			this.enabled = false;
 
-            gameObject.SetActive(false);
+
+			//gameObject.SetActive(false);
 
 
-        }
-        else if (Input.GetButtonDown("Down") && Backward != null && !HaveChoose)
+		}
+		else if (Input.GetButtonDown("Down") && Backward != null)
         {
             Debug.Log("Choose Backward");
 
@@ -90,8 +93,10 @@ public class ChooseTheWay : MonoBehaviour
                 ForwardButton.SetActive(false);
             if (ForwardButton != null)
                 ForwardButton.SetActive(false);
-            gameObject.SetActive(false);
+			this.enabled = false;
 
-        }
-    }
+			//gameObject.SetActive(false);
+
+		}
+	}
 }

@@ -5,7 +5,7 @@ using System.Collections;
 public class DecryptGameCode : MonoBehaviour
 {
     private short[] numbersSet1 = new short[7];
-    private short[] numbersSet2 = new short[7];
+    //private short[] numbersSet2 = new short[7];
     public TextMeshProUGUI[] NumbersText;
     private short currset = 1;
     private short indexPointer = -1;
@@ -65,14 +65,14 @@ public class DecryptGameCode : MonoBehaviour
                 NumbersText[i].text = numbersSet1[i].ToString();
             }
         }
-        else if (currset == 2)
+        /*else if (currset == 2)
         {
             for (int i = 0; i < 7; i++)
             {
                 NumbersText[i].text = numbersSet2[i].ToString();
             }
-        }
-        else if (currset == 3)
+        }*/
+        else if (currset == 2)
         {
             NumbersText[0].text = "Y";
             NumbersText[1].text = "O";
@@ -117,7 +117,7 @@ public class DecryptGameCode : MonoBehaviour
         {
             numbersSet1[i] = (short)Random.Range(1, 5);
             NumbersText[i].text = numbersSet1[i].ToString();
-            numbersSet2[i] = (short)Random.Range(1, 5);
+            //numbersSet2[i] = (short)Random.Range(1, 5);
         }
     }
 
@@ -185,19 +185,19 @@ public class DecryptGameCode : MonoBehaviour
     private void CheckState()
     {
         short currnum;
-        // 1: LT
-        // 2: LB
-        // 3: RT
-        // 4: RB
-        if (currset == 1)
+		// 1: LT
+		// 2: LB
+		// 3: RT
+		// 4: RB
+		/*if (currset == 1)
         {
             currnum = numbersSet1[indexPointer];
-        }
-        else
+        }*/
+		/*else
         {
             currnum = numbersSet2[indexPointer];
-        }
-
+        }*/
+		currnum = numbersSet1[indexPointer];
         switch (currnum)
         {
             case 1:
