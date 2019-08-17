@@ -28,7 +28,7 @@ public class movement_ghost : MonoBehaviour
 	public GameObject nurse;
 	AudioSource audio;
 	public AudioSource hit_head;
-	
+	public GameObject point_go;
 	bool idle = false;
 	// Start is called before the first frame update
 	void Start()
@@ -62,6 +62,7 @@ public class movement_ghost : MonoBehaviour
 
 		}
 		if (play && !Inventory.inventory.FlashLight) {
+
 			idle = false;
 			audio.enabled = true;
 			anim.SetBool("walk", false);
@@ -86,6 +87,7 @@ public class movement_ghost : MonoBehaviour
 				timer_stun = time_stun ;
 
 			}
+			
 			if (stun)
 			{
 				audio.enabled = false;
@@ -113,6 +115,15 @@ public class movement_ghost : MonoBehaviour
 				timer_hold = time_hold;
 				hold = true;
 			}
+
+		}
+		else if(play)
+		{
+			
+			audio.enabled = true;
+			anim.SetBool("fastrun", true);
+			agent.speed = 4.5f;
+			agent.SetDestination(point_go.transform.position);
 			
 		}
 		

@@ -15,11 +15,16 @@ public class DecryptGameCode : MonoBehaviour
     private bool scrambling = false;
     private bool pausing = false;
 
-    public int pauseTimes;
+	public GameObject canava;
+	public GameObject canava2;
+	public int pauseTimes;
     public int scrambleTimes;
     public float scrambleWaitSecond;
-
-    private void OnEnable()
+	public float timer = 15;
+	public float timerdestroy = 100;
+	bool check=false;
+	float cho;
+	private void OnEnable()
     {
         Random14Int();
         StartCoroutine(NumScrambler(scrambleTimes, scrambleWaitSecond));
@@ -101,14 +106,59 @@ public class DecryptGameCode : MonoBehaviour
 
     private void Update()
     {
-        if (!scrambling && !pausing)
+		if (check == false)
+		{
+			cho = Random.Range(1, 3);
+			check = true;
+		}
+		
+
+		if (!scrambling && !pausing)
         {
             GetInput();
             if (leftBumper || rightBumper || leftTrigger || rightTrigger)
                 CheckState();
             CurrentState();
         }
-    }
+		
+		
+		if (timer < 0)
+		{
+			timerdestroy -= Time.deltaTime;
+			
+			
+			if (cho == 1)
+			{
+				canava.SetActive(true);
+				timerdestroy -= Time.deltaTime;
+				if (timerdestroy < 0)
+				{
+					canava.SetActive(false);
+					SceneLoadManager.Instance.SwitchSceneinLoading();
+					check = false;
+				}
+				
+			}
+			else
+			{
+				canava2.SetActive(true);
+				timerdestroy -= Time.deltaTime;
+				if (timerdestroy < 0)
+				{
+					canava2.SetActive(false);
+					SceneLoadManager.Instance.SwitchSceneinLoading();
+					check = false;
+				}
+			}
+
+
+
+		}
+		else
+		{
+			timer -= Time.deltaTime;
+		}
+	}
 
 
     public void Random14Int()
@@ -211,7 +261,7 @@ public class DecryptGameCode : MonoBehaviour
                 }
                 break;
             case 2:
-                if (leftBumper)
+                if (rightBumper)
                 {
                     indexPointer++;
                 }
@@ -231,7 +281,7 @@ public class DecryptGameCode : MonoBehaviour
                 }
                 break;
             case 4:
-                if (rightBumper)
+                if (leftBumper)
                 {
                     indexPointer++;
                 }

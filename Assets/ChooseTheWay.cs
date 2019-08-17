@@ -14,9 +14,11 @@ public class ChooseTheWay : MonoBehaviour
     public GameObject RightButton; 
     public GameObject ForwardButton;
     public GameObject BackwardButton;
+	private float Countdown;
     private void Start()
     {
-        //CheckTheWay();
+		//CheckTheWay();
+		Countdown = 5;
     }
     private void CheckTheWay()
     {
@@ -26,8 +28,71 @@ public class ChooseTheWay : MonoBehaviour
         BackwardButton.SetActive(Backward != null);
     }
     private void Update()
-    {   if(!WalkingPath.Instance.haveChoose)
-            CheckTheWay();
+    {
+		Countdown -= Time.deltaTime;
+		if (!WalkingPath.Instance.haveChoose)
+			CheckTheWay();
+		if (Countdown <= 0)
+		{
+			int index = Random.Range(0, 4);
+			Debug.Log(index);
+			if(index == 0 && Forward != null)
+			{
+				Debug.Log("Choose Forward");
+
+				WalkingPath.Instance.ChoosenPosition = Forward;
+				WalkingPath.Instance.haveChoose = true;
+				if (RightButton != null)
+					RightButton.SetActive(false);
+				if (LeftButton != null)
+					LeftButton.SetActive(false);
+				if (BackwardButton != null)
+					BackwardButton.SetActive(false);
+				this.enabled = false;
+			}
+			else if(index == 1 && Backward != null)
+			{
+				Debug.Log("Choose Backward");
+
+				WalkingPath.Instance.ChoosenPosition = Backward;
+				WalkingPath.Instance.haveChoose = true;
+				if (RightButton != null)
+					RightButton.SetActive(false);
+				if (ForwardButton != null)
+					ForwardButton.SetActive(false);
+				if (ForwardButton != null)
+					ForwardButton.SetActive(false);
+				this.enabled = false;
+			}
+			else if(index == 2 && Left != null)
+			{
+				Debug.Log("Choose Left");
+
+				WalkingPath.Instance.ChoosenPosition = Left;
+				WalkingPath.Instance.haveChoose = true;
+				if (RightButton != null)
+					RightButton.SetActive(false);
+				if (ForwardButton != null)
+					ForwardButton.SetActive(false);
+				if (BackwardButton != null)
+					BackwardButton.SetActive(false);
+				//gameObject.SetActive(false);
+				this.enabled = false;
+			}
+			else if(index == 3 && Right != null)
+			{
+				WalkingPath.Instance.ChoosenPosition = Right;
+				WalkingPath.Instance.haveChoose = true;
+				if (LeftButton != null)
+					LeftButton.SetActive(false);
+				if (ForwardButton != null)
+					ForwardButton.SetActive(false);
+				if (BackwardButton != null)
+					BackwardButton.SetActive(false);
+				this.enabled = false;
+			}
+		}
+
         if (Input.GetButtonDown("Left") && Left != null)
         {
             Debug.Log("Choose Left");
