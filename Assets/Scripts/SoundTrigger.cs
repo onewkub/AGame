@@ -12,7 +12,7 @@ public class SoundTrigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Ghost")
+        if (other.tag == "Ghost2")
         {
             sfxController.AttackToElevator();
             StartCoroutine(waitSound());

@@ -13,7 +13,7 @@ public class MainMenuController : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button2))
+        if (Input.GetButton("Space"))
         {
             LoadPrepareScene();
         }
