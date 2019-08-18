@@ -49,7 +49,7 @@ public class end_game : MonoBehaviour
     }
     private void Update()
     {
-        if (GameIsEnd && Input.GetKey(KeyCode.Joystick1Button2))
+        if (GameIsEnd && Input.GetButtonDown("Down"))
         {
 			GameSystem.Instance.DestroyIt();
             LoadMainMenuScene();
