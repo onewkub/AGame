@@ -13,14 +13,17 @@ public class move_ghost : MonoBehaviour
 	public GameObject player;
 	public bool playerhide;
 	float dist;
-	public float range = 5;
+	public float range = 7;
 	public float delay = 10;
     float timer = 10;
 	public float run = 7f;
 	public GameObject point_frontlift;
 	public GameObject point_find;
 	AudioSource audio;
-	public WheelChairMovement move;
+    //public WheelChairMovement move;
+    public GameObject inHiddingSpot;
+    public GameObject Escape;
+    public GameObject Head;
 	// Start is called before the first frame update
 	void Start()
     {
@@ -38,7 +41,7 @@ public class move_ghost : MonoBehaviour
 		{
 			audio.enabled = true;
 			agent.speed = 5f;
-			agent.stoppingDistance = range;
+			agent.stoppingDistance = range-2;
 			timer += Time.deltaTime;
 			agent.SetDestination(player.transform.position);
 			dist = Vector3.Distance(player.transform.position, transform.position);
@@ -46,9 +49,16 @@ public class move_ghost : MonoBehaviour
 			{
 				audio.enabled = false;
 				anim.SetBool("isRunning", false);
-				if (timer >= delay)
+                PlayerMovement.Instance.agent.Stop();
+
+                if (timer >= delay)
 				{
-					
+                    Rigidbody HeadCut = Head.GetComponent<Rigidbody>();
+                    Head.GetComponent<BoxCollider>().enabled = true;
+                    HeadCut.freezeRotation = false;
+                    HeadCut.useGravity = true;
+                    HeadCut.AddForceAtPosition(Vector3.left, Head.transform.forward);
+                    end_game.Instance.PlayerIsDead();
 					anim.SetTrigger("isHitting");
 					timer = 0;
 				}
@@ -88,12 +98,14 @@ public class move_ghost : MonoBehaviour
 					anim.SetBool("isRunning", false);
 					anim.SetBool("findplayer", true);
 					timerfindplayer -= Time.deltaTime;
-					move.enabled = false;
+					//move.enabled = false;
 					
 				}
 				if (timerfindplayer < 0)
 				{
-					move.enabled = true;
+                    //move.enabled = true;
+                    Debug.Log("Done");
+                    inHiddingSpot.GetComponent<ChooseTheWay>().Left = Escape;
 					backlift = true;
 					audio.enabled = true;
 					anim.SetBool("isRunning", true);

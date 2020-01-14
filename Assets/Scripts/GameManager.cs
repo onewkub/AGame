@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            DontDestroyOnLoad(gameObject);
             gameManager = this;
         }
         Arrive1FloorBloody = false;

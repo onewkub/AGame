@@ -25,7 +25,7 @@ public class ObjectiveTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!triggered)
+        if (!triggered && other.CompareTag("Player"))
         {
             if (sideText)
                 sideText.gameObject.SetActive(true);

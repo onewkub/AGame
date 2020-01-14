@@ -62,7 +62,7 @@ public class Flashlight_PRO : MonoBehaviour
 	/// </summary>
 	public void Switch()
 	{
-        Debug.Log(is_enabled);
+        //Debug.Log(is_enabled);
 		is_enabled = !is_enabled; 
 
 		Lights.SetActive (is_enabled);

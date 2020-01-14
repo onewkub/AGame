@@ -123,13 +123,13 @@ public class DecryptGameCode : MonoBehaviour
 
     public void GetInput()
     {
-        leftBumper = Input.GetButtonDown("LeftBumper");
-        rightBumper = Input.GetButtonDown("RightBumper");
+        leftBumper = Input.GetButtonDown("Left");
+        rightBumper = Input.GetButtonDown("Right");
 
         // like get button down but for axis
         if (!LTLastFrame)
         {
-            leftTrigger = Input.GetAxis("LeftTrigger") == 1;
+            leftTrigger = Input.GetAxis("Up") == 1;
         }
         else
         {
@@ -137,14 +137,14 @@ public class DecryptGameCode : MonoBehaviour
         }
         if (!RTLastFrame)
         {
-            rightTrigger = Input.GetAxis("RightTrigger") == 1;
+            rightTrigger = Input.GetAxis("Down") == 1;
         }
         else
         {
             rightTrigger = false;
         }
-        LTLastFrame = Input.GetAxis("LeftTrigger") == 1;
-        RTLastFrame = Input.GetAxis("RightTrigger") == 1;
+        LTLastFrame = Input.GetAxis("Up") == 1;
+        RTLastFrame = Input.GetAxis("Down") == 1;
     }
 
     private void CurrentState()
